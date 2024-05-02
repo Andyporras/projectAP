@@ -1,0 +1,44 @@
+
+
+
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.form-group {
+    margin-bottom: 10px;
+}
+.contenedor{
+   margin-top: 60px;
+    margin-bottom: 40px;
+    margin-left: 655px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+   
+}
+
+input,
+select {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f7f7f7;
+}
+
+input[type="checkbox"] {
+    width: auto;
+    margin-right: 5px;
+}
+
+.boton{
+    margin-left: 41%;
+}
+
+

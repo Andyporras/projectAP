@@ -21,7 +21,7 @@
    
 }
 .cont {
-    max-width: 500px;
+    width: 500px;
     border:solid;
     border-color: #504A8E;
     padding: 30px;

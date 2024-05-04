@@ -1,0 +1,135 @@
+
+
+
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.form-group {
+    margin-bottom: 10px;
+}
+.botonarriba{
+    background-color: #9781A1;
+    color: white;
+}
+.botonarriba:hover{
+    background-color: #cabcd1;
+}
+.contenedor{
+   margin-top: 60px;
+    margin-bottom: 40px;
+    margin-left: 25px;
+   width: 97%;
+}
+.imagen{
+    height: 300px;
+    margin-left: -940px;
+  }
+.titulo{
+    font-size: 30px;
+    margin-bottom: 40px;
+}
+.checked {
+    color: white;
+  }
+.unchecked{
+    color: #3F2B8E;
+}
+
+.categorias{
+    display: inline-block;
+    font-weight: bold;
+    width: 65px;
+    padding-left: 10px;
+    padding-top: 5px;
+    padding-bottom:5px;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.terror{
+    background-color: #013014;
+}
+
+.drama{
+    width: 70px;
+    background-color: #C10E0E;
+}
+.filtroBtn{
+    
+    height: 50px;
+    width: 100px;
+    font-size: 20px;
+    font-family: Arial;
+}
+.filtro{
+    margin-left: 1500px;
+    margin-top: 200px;
+}
+.temporadas{
+    width: 74px;
+    color: black;
+    background-color: #FFFFFF;
+}
+
+.año{
+    width: 55px;
+    background-color: #7E7C7B;
+}
+.derecha{
+    margin-right: -500px;
+}
+
+.botonesDerecha{
+    display:flex;
+    margin-top: 65px;
+    padding-left: 40px;
+    padding-right: 40px;
+    font-size: 20px;
+    
+}
+.producto{
+    padding-bottom: 25px;
+    padding-top: 25px;
+    border-bottom: solid 1px;
+    border-color: #504A8E;
+}
+a{
+    text-decoration: none;
+}
+.rating{
+    margin-top:35px;
+    margin-right: 10px;
+    display: inline-block;
+}
+  .centro{
+    text-align: left;
+    margin-left: -700px;
+  }
+
+label {
+    display: block;
+    margin-bottom: 5px;
+   
+}
+
+input,
+select {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f7f7f7;
+}
+
+input[type="checkbox"] {
+    width: auto;
+    margin-right: 5px;
+}
+
+.boton{
+    margin-left: 41%;
+}

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Productos Landing</title>
+    <title>Historial</title>
     
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -13,7 +13,7 @@
    
     <link rel="stylesheet" href="../archivosCSS/estilosGenerales.css">
     <link rel="stylesheet" href="../archivosCSS/estilosPantallasProds.css">
-    <link rel="stylesheet" href="../archivosCSS/estilosAdmin.css">
+    
 
     <script type = "text/javaScript" src = "../../back-end/reloj.js"></script>
 </head>
@@ -32,42 +32,37 @@
             <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
                 
                 <div class="navbar-nav">
-                    <a class="nav-link" aria-current="page" href="">Productos</a>
-                  
-                   
+                    <a class="nav-link" aria-current="page" href="/fron-end/archivosHTML/seriesReg.html">Series</a>
+                    <a class="nav-link" href="/fron-end/archivosHTML/pelisReg.html" >Peliculas</a>
+                    <a class="nav-link" href="/fron-end/archivosHTML/docusReg.html">Documentales</a>
                         <div class="dropdown" style="float:right;">
-                            <button class="dropbtn  drop agregar" >Agregar</button>
-                            <div class="dropdown-content">
-                              <a href="#">Producto</a>
-                              <a href="#">Creativo</a>
-                            
-                            </div>
-                          </div>
-                          <a class="nav-link" href="">Estadisticas</a>
-                          <div class="dropdown" style="float:right;">
                             <button class="dropbtn  drop" > <label for="" class = "icono">☰</label></button>
                             <div class="dropdown-content">
-                              <a href="/fron-end/archivosHTML/logIn.html">Cerrar Sesion</a>
-                              <a href="/fron-end/archivosHTML/landingAdmin.html">Salir</a>
-                            
+                              <a href="/fron-end/archivosHTML/perfil.html">Perfil</a>
+                              <a href="/fron-end/archivosHTML/wishlist.html">Wishlist</a>
+                              <a href="">Historial</a>
+                              <a href="/fron-end/archivosHTML/carrito.html">Carrito</a>
+                              <a href="/fron-end/archivosHTML/landingPage.html">Cerrar Sesión</a>
                             </div>
                           </div>
-                          
                 </div>
             </div>
             
         </div>
     </nav>
-
+    <div class = "topN">
+        <label for="" class = "textoColor">Mis Compras</label> 
+        </div>
    <div class = "filtro">
     
             <button class="btn btn-secondary dropdown-toggle boton filtroBtn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
               Filtro
             </button>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Terror</a></li>
-              <li><a class="dropdown-item" href="#">Drama</a></li>
-              
+              <li><a class="dropdown-item" href="#">3 Meses</a></li>
+              <li><a class="dropdown-item" href="#">6 Meses</a></li>
+              <li><a class="dropdown-item" href="#">1 Año</a></li>
+              <li><a class="dropdown-item" href="#">Todos</a></li>
             </ul>
           </div>
     </div>
@@ -103,14 +98,15 @@
                 
             </div>
               <div class="col derecha">
-                <button class = "boton botonesDerecha">+</button>
-                <button class = "boton botonesDerecha"><i class="fa fa-heart"></i></button>
+                <label for="" class  = "textoDerecha">12/06/2021</label>
+                <label for="" class  = "textoDerecha abajo">$6.99</label>
               </div>
             </div>
           </div>
     </div>
     
 
+  
 
  
 

@@ -21,8 +21,12 @@ h2 {
 .contenedor{
    margin-top: 60px;
     margin-bottom: 40px;
-    margin-left: 25px;
-   width: 97%;
+    margin-left: 40%;
+   width: 20%;
+}
+.imagenPerfil{
+    height: 250px;
+    border-radius: 10px;
 }
 .imagen{
     height: 300px;

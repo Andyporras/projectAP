@@ -13,6 +13,7 @@ body {
     border: 1px solid #ccc;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: auto;
 }
 
 .formulario {
@@ -24,11 +25,25 @@ h1 {
     margin-bottom: 20px;
     color: #333;
 }
+h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #f7f5f5;
+    width: 100%;
+    /* centrar el h2 */
+    text-align: center;
+
+}
 
 label {
     display: block;
     margin-bottom: 5px;
     color: #333;
+}
+
+.cont {
+    margin: auto;
+
 }
 
 input[type="text"],
@@ -64,15 +79,6 @@ select:focus {
     outline: none;
 }
 
-button {
-    background-color: #007bff;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
 button:hover {
     background-color: #0056b3;
 }
@@ -87,4 +93,28 @@ button:hover {
     right: 10px;
     transform: translateY(-50%);
     pointer-events: none;
+}
+/* configuracion para que 2 input y label este al lado de cada uno, la clase es direccion*/
+.Direccion label {
+    display: inline-block;
+    width: 40%;
+    margin: 20px 0 5px 0;
+    margin-right: 20px;
+}
+.Direccion input {
+    width: 44%;
+    margin-right: 5px;
+    
+}
+.Direccion {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* configuracion para que 2 botones esten al lado de cada uno, la clase es boton */
+
+.boton {
+    margin: 1px 1px 1px 1px;
+    /* cada boton en una esquina */
+    width: 45%;
 }

@@ -7,6 +7,10 @@ h2 {
     margin-bottom: 20px;
     color: #fff;
 }
+.perfil{
+    font-size: 20px;
+    margin-right: 10px;
+}
 
 .form-group {
     margin-bottom: 10px;
@@ -19,16 +23,21 @@ h2 {
     background-color: #cabcd1;
 }
 .contenedor{
-   margin-top: 60px;
+    text-align: center;
+   margin-top: -200px;
     margin-bottom: 40px;
     margin-left: 40%;
    width: 20%;
 }
+
 .imagenPerfil{
+    margin-top: 80px;
+    margin-left: 40px;
     height: 250px;
     border-radius: 10px;
 }
 .imagen{
+    
     height: 300px;
     margin-left: -940px;
   }
@@ -44,6 +53,7 @@ h2 {
 }
 
 .categorias{
+    
     display: inline-block;
     font-weight: bold;
     width: 65px;
@@ -124,12 +134,12 @@ h2 {
 }
 
 .botonesDerecha{
-    display:flex;
+   display: inline-block;
     margin-top: 65px;
     padding-left: 40px;
     padding-right: 40px;
     font-size: 20px;
-    
+    margin-left: 10px;
 }
 .producto{
     padding-bottom: 25px;
@@ -151,7 +161,7 @@ a{
   }
 
 label {
-    display: block;
+    
     margin-bottom: 5px;
    
 }
@@ -168,8 +178,4 @@ select {
 input[type="checkbox"] {
     width: auto;
     margin-right: 5px;
-}
-
-.boton{
-    margin-left: 41%;
 }

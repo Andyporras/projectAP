@@ -36,7 +36,24 @@ input[type="checkbox"] {
     width: auto;
     margin-right: 5px;
 }
+.botonEditar{
+    display: inline-block;
+    
+    margin-left: 99px;
+    margin-top: 10px;
+    padding: 5px 10px;
+    border: none;
+    background-color: #2C0B62;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
 
+}
+
+.botonEditar:hover {
+    background-color: #9781A1;
+}
 .boton{
     margin-left: 41%;
 }

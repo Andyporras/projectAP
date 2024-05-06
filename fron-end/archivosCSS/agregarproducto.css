@@ -1,19 +1,8 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f2f2f2;
-}
 
-.contenedor-formulario {
-    width: 500px;
-    margin: 20px auto;
-    background-color: #fff;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin: auto;
+
+
+.agregar{
+    margin-top: 7px;
 }
 
 .formulario {
@@ -38,11 +27,13 @@ h2 {
 label {
     display: block;
     margin-bottom: 5px;
-    color: #333;
+ 
 }
 
 .cont {
-    margin: auto;
+   margin-top: 90px;
+   margin-left: 38%;
+   margin-bottom: 90px;
 
 }
 

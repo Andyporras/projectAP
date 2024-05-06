@@ -13,6 +13,7 @@ function volverPerfil(){
     location.href = "../../fron-end/archivosHTML/perfil.html"
 }
 
+
 function editarPerfil(){
     location.href = "../../fron-end/archivosHTML/editarPerfil.html"
 }

@@ -17,3 +17,11 @@ function volverPerfil(){
 function editarPerfil(){
     location.href = "../../fron-end/archivosHTML/editarPerfil.html"
 }
+
+function estrella(valor){
+    console.log("estrella " + valor)
+}
+
+function editarProducto(){
+    location.href = "../../fron-end/archivosHTML/modificarProducto.html"
+}

@@ -1,0 +1,196 @@
+
+
+
+.agregar{
+    margin-top: 7px;
+}
+
+.contenedor{
+   margin-top: 10px;
+    margin-bottom: 0px;
+    margin-left: 25px;
+   width: 90%;
+   border-left: none; 
+   border-right: none; 
+   border-top: none;
+   border-radius: 5px; 
+   border-width: 1px;
+}
+.botonDerecha{
+    margin-left: -2800px;
+    display: flex ;
+}
+.boton{
+    font-size: 30px;
+    margin-left: 51%;
+    margin-top: 100px;
+}
+.filtroBtn{
+    background-color: #504A8E;
+    width: 160px;
+}
+
+
+
+
+
+.publicar{
+    margin-left: 1390px;
+    margin-top: 0px;
+}
+.contenedorScroll2{
+    
+    background-color: #110C1C;
+    overflow-y: scroll;
+    height: 950px;
+    overflow-x: hidden;
+
+   
+    padding: 10px;
+   margin-top: 20px;
+   border: solid;
+   
+   width: 100%;
+    border-color: #504A8E;
+   border-radius: 10px;
+}
+.comentario{
+    background-color: rgb(189, 189, 189);
+    letter-spacing: 1px;
+    line-height: 1.5;
+    font-size: 20px;
+    border-radius: 5px;
+}
+.filtroBtn:hover{
+    background-color: #6d405f;
+}
+.primero{
+    margin-top: 80px;
+}
+.textos{
+    text-align: justify;
+    font-size: 20px;
+    display: inline-block;
+    margin-right: 10px;
+    margin-top: -10px;
+    margin-bottom: 30px;
+}
+.textosCat{
+    color: white;
+}
+.temporadas{
+    width: 74px;
+    color: black;
+    background-color: #FFFFFF;
+}
+.trailer{
+    margin-left: -250px;
+    margin-top: 5px;
+}
+.desc{
+    margin-left: -250px;
+}
+.titulos{
+    color: white;
+}
+.bot{
+    margin-top: -10px;
+    margin-bottom: 30px;
+    width: 60px;
+}
+.contenedorScroll{
+  
+    text-align: center;
+    background-color: #110C1C;
+    overflow: auto;
+    white-space: nowrap;
+    padding: 10px;
+   margin-top: 20px;
+   border: solid;
+   border-color: #504A8E;
+   border-radius: 10px;
+}
+.contenido{
+    display: inline-block;
+    text-align: center;
+    
+}
+.imagenScroll{
+    height: 300px;
+    padding: 10px;
+}
+.imagen{
+    margin-top: -30px;
+    height: 300px;
+    margin-left: -150px;
+  }
+.titulo{
+    font-size: 30px;
+    margin-bottom: 40px;
+}
+
+
+.contComentarios{
+   
+ 
+    border-radius: 5px;
+    width: 75%;
+    margin-top:30px;
+    margin-left:12%;
+  
+}
+.editar{
+    margin-top: -50px;
+    margin-left: 90%;
+}
+.imagenPerfil{
+   
+    margin-left: 40px;
+    height: 230px;
+    border-radius: 10px;
+}
+
+.rate {
+    margin-top: -60px;
+    
+    float: left;
+    height: 46px;
+    padding: 0 10px;
+}
+.rate:not(:checked) > input {
+    position:absolute;
+    top:-9999px;
+}
+.rate:not(:checked) > label {
+    float:right;
+    width:1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:60px;
+    color:#ccc;
+}
+.rate:not(:checked) > label:before {
+    content: '★ ';
+}
+.rate > input:checked ~ label {
+    color: #ffc700;    
+}
+.rate:not(:checked) > label:hover,
+.rate:not(:checked) > label:hover ~ label {
+    color: #deb217;  
+}
+.rate > input:checked + label:hover,
+.rate > input:checked + label:hover ~ label,
+.rate > input:checked ~ label:hover,
+.rate > input:checked ~ label:hover ~ label,
+.rate > label:hover ~ input:checked ~ label {
+    color: #c59b08;
+}
+
+
+.HBOMax{
+    width: 105px;
+    background-color: #7440B6;
+}
+

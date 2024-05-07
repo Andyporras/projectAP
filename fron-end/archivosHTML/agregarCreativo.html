@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar Creativo</title>
+    
+   
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> 
+   
+    <link rel="stylesheet" href="../archivosCSS/estilosGenerales.css">
+    <link rel="stylesheet" href="../archivosCSS/agregarproducto.css">
+    
+
+    <script type = "text/javaScript" src = "../../back-end/reloj.js"></script>
+</head>
+<body class = "body">
+    <nav class="navbar navbar-expand-lg navbar-dark navbarTodos fixed-top">
+       
+        <div class="container-fluid">
+        <a class="navbar-brand" href="landingPage.html">LOGO</a>
+        <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn  botonarriba" type="submit">Buscar</button>
+          </form>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+                
+                <div class="navbar-nav">
+                    <a class="nav-link" aria-current="page" href="/fron-end/archivosHTML/productos.html">Productos</a>
+                  
+                   
+                        <div class="dropdown" style="float:right;">
+                            <button class="dropbtn drop agregar" > Agregar</button>
+                            <div class="dropdown-content">
+                              <a href="/fron-end/archivosHTML/agregarproducto.html">Producto</a>
+                              <a href="/fron-end/archivosHTML/agregarCreativo.html">Creativo</a>
+                            
+                            </div>
+                          </div>
+                          <a class="nav-link" href="/fron-end/archivosHTML/estadisticas.html">Estadisticas</a>
+                          <div class="dropdown" style="float:right;">
+                            <button class="dropbtn  drop" > <label for="" class = "icono">☰</label></button>
+                            <div class="dropdown-content">
+                              <a href="/fron-end/archivosHTML/logIn.html">Cerrar Sesion</a>
+                              <a href="/fron-end/archivosHTML/landingAdmin.html">Salir</a>
+                            
+                            </div>
+                          </div>
+                        
+                </div>
+            </div>
+            
+        </div>
+    </nav>
+    <div class="cont contenedor">
+        <h2>Registrar Creativo</h2>
+        <form action="#">
+            <div class="form-group">
+                <label for="nombre" class = "textos">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Nombre">
+            </div>
+            <div class="form-group">
+                <label for="nombre" class = "textos">Segundo Nombre:</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Segundo Nombre">
+            </div>
+            <div class="form-group">
+                <label for="apellido" class = "textos">Apellido:</label>
+                <input type="text" id="apellido" name="apellido" placeholder="Apellido">
+            </div>
+            <div class="form-group">
+                <label for="apellido" class = "textos">Segundo Apellido:</label>
+                <input type="text" id="apellido" name="apellido" placeholder="Segundo Apellido">
+            </div>
+            <div class="form-group">
+                <label for="fecha_nacimiento" class = "textos">Fecha de nacimiento:</label>
+                <input type="date" id="fecha_nacimiento" name="fecha_nacimiento">
+            </div>
+            <div class="form-group">
+                <label for="cedula" class = "textos">Lugar de Nacimiento:</label>
+                <input type="text" id="cedula" name="cedula" placeholder="Lugar de Nacimiento">
+            </div>
+            <div class="form-group">
+                <label for="nationality" class = "textos">Nacionalidad:</label>
+                <input type="text" id = "national
+                ity" name="national
+                ity" placeholder="Tu nacionalidad">
+            </div>
+            <div class="form-group">
+                <label for="apellido" class = "textos">Biografia:</label>
+                <input type="text" id="apellido" name="apellido" placeholder="Biografia">
+            </div>
+            <div class="form-group">
+                <label for="allegado" class = "textos">Allegado:</label>
+                <button class = "boton">Agregar</button>
+            
+                <div class="Direccion">
+                    <label for="nombre" class = "textos">Nombre</label>
+                    <label for="parentesco" class = "textos">Parentesco</label>
+                    <!-- <input type="text" id="direccion" name="direccion" placeholder="Cédula"> -->
+                </div>
+                <div class="Direccion">
+                    <input type="text" id="nombre" name="nombre" placeholder="Nombre">
+                    <input type="text" id="parentesco" name="rol" placeholder="Parentesco">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="telefono" class = "textos">Altura:</label>
+                <input type="tel" id="altura" name="altura" placeholder="Altura">
+            </div>
+            <div class="form-group">
+                <label for="usuario" class = "textos">Datos Trivia:</label>
+                <input type="text" id="trivia" name="trivia" placeholder="Datos Trivia">
+            </div>
+            <div class="form-group">
+                <label for="contraseña" class = "textos">Trabajos:</label>
+                <button class = "boton">Agregar</button>
+                <div class="Direccion">
+                    <label for="producto" class = "textos">Producto</label>
+                    <label for="parentesco" class = "textos">Rol</label>
+                    <!-- <input type="text" id="direccion" name="direccion" placeholder="Cédula"> -->
+                </div>
+                <div class="Direccion">
+                    <select id="producto" name="plataformas" class = "producto">
+                        <option value="">Selecciona un producto</option>
+                        <option value="pelicula">Pelicula</option>
+                        
+                    </select>
+                    <input type="text" id="rol" name="rol" placeholder="Rol">
+                </div>
+               
+            </div>
+           
+            <div class="form-group">
+                <label for="foto" class = "textos">Foto:</label>
+                <input type="file" id="foto" name="foto" class = "textos">
+            </div>
+            
+  
+            <button type="button" class = "boton" onclick = "history.back()">Volver</button>
+            <button type="submit" class = "boton">Guardar</button>
+        </form>
+    </div>
+    
+    <div class = "BarraFondo">
+       
+            
+            
+                <div id="clock">
+                    <label id="date-time" > </label>
+                 
+                </div>
+           
+
+       
+          
+           
+      
+    </div>
+
+</body>
+</html>

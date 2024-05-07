@@ -25,3 +25,7 @@ function estrella(valor){
 function editarProducto(){
     location.href = "../../fron-end/archivosHTML/modificarProducto.html"
 }
+
+function editarCreativo(){
+    location.href = "../../fron-end/archivosHTML/editarCreativo.html"
+}

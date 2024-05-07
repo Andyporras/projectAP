@@ -85,6 +85,9 @@ button:hover {
     transform: translateY(-50%);
     pointer-events: none;
 }
+.producto{
+    width: 210px;
+}
 /* configuracion para que 2 input y label este al lado de cada uno, la clase es direccion*/
 .Direccion label {
     display: inline-block;

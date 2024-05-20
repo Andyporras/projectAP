@@ -1,3 +1,6 @@
+create database	IMDB2024;
+use IMDB2024;
+
 CREATE TABLE Country
 (
 	idCountry INT AUTO_INCREMENT PRIMARY KEY,
@@ -37,16 +40,6 @@ CREATE TABLE IdType
 	type_name VARCHAR(255) UNIQUE NOT NULL
 );
 
-CREATE TABLE Identification 
-(
-	id INT AUTO_INCREMENT PRIMARY KEY,
-    idPerson INT,
-	idType INT,
-	id_number VARCHAR(255) UNIQUE NOT NULL,
-    FOREIGN KEY (idPerson) REFERENCES Person(id),
-	FOREIGN KEY (idType) REFERENCES IdType(id)
-);
-
 CREATE TABLE Person
 (
 	id INT AUTO_INCREMENT PRIMARY KEY,
@@ -60,6 +53,18 @@ CREATE TABLE Person
     idLocation INT,
     FOREIGN KEY (idLocation) REFERENCES Canton(idCanton)
 );
+
+CREATE TABLE Identification 
+(
+	id INT AUTO_INCREMENT PRIMARY KEY,
+    idPerson INT,
+	idType INT,
+	id_number VARCHAR(255) UNIQUE NOT NULL,
+    FOREIGN KEY (idPerson) REFERENCES Person(id),
+	FOREIGN KEY (idType) REFERENCES IdType(id)
+);
+
+
 
 DELIMITER //
 CREATE trigger set_age
@@ -78,6 +83,7 @@ CREATE TABLE UserIMDB
     pay_type VARCHAR(255),
     FOREIGN KEY (idPerson) REFERENCES Person(id)
 );
+
 CREATE TABLE Administrator
 (
 	idUser INT primary KEY,
@@ -99,6 +105,12 @@ CREATE TABLE Purchase
     totalCost INT
 );
 
+
+CREATE TABLE MediaType
+(
+	idMediaType INT PRIMARY KEY,
+    tipo VARCHAR(255) UNIQUE
+);
 
 CREATE TABLE ProductAV
 (
@@ -142,11 +154,6 @@ CREATE TABLE category
     category_name VARCHAR(255) NOT NULL
 );
 
-CREATE TABLE MediaType
-(
-	idMediaType INT PRIMARY KEY,
-    tipo VARCHAR(255) UNIQUE
-);
 
 CREATE TABLE Season
 (

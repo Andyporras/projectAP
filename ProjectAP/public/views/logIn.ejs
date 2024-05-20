@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> 
+
+    <!-- <link rel="stylesheet" href="../archivosCSS/login.css">
+    <link rel="stylesheet" href="../archivosCSS/estilosGenerales.css">
+
+    <script type = "text/javaScript" src = "../../back-end/reloj.js"></script>
+    <script type = "text/javaScript" src = "../../back-end/logIn.js"></script> -->
+    <link rel="stylesheet" href="resources/css/login.css">
+    <link rel="stylesheet" href="resources/css/estilosGenerales.css">
+
+    <script type = "text/javaScript" src="resources/js/reloj.js"></script>
+    <script type = "text/javaScript" src="resources/js/logIn.js"></script>
+   
+</head>
+<body class = "body">
+    <nav class="navbar navbar-expand-lg navbar-dark navbarTodos fixed-top">
+       
+        <div class="container-fluid">
+        <a class="navbar-brand" href="landingPage">LOGO</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link" aria-current="page" href="seriesNoReg">Series</a>
+                    <a class="nav-link" href="pelisNoReg" >Peliculas</a>
+                    <a class="nav-link" href="docusNoReg" >Documentales</a>
+                        <div class="dropdown" style="float:right;">
+                            <button class="dropbtn  drop" > <label for="" class = "icono">☰</label></button>
+                            <div class="dropdown-content">
+                              <a href="landingPage">Salir</a>
+                            
+                            </div>
+                          </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="contenedor cont ">
+        <form action="auth" method="POST">
+            <h1 class = "titulo">Iniciar sesión</h1>
+            <input type="text" placeholder="Usuario" id="usuario"  name="usuario" autofocus required>
+            <input type="password" placeholder="Contraseña" id="contraseña" name="password" required>
+            <!-- <input type="submit" value="Iniciar sesión" id="boton">  -->
+            <input type="submit" class="btn-login" value="Login">
+        </form>
+        <div class="botones">
+            <a href="registrar">No posee una cuenta? Registrese</a> 
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+        <% if (typeof alert != "undefined")  { %>
+         <script>
+         Swal.fire({
+           title:'<%= alertTitle %>',
+           text:'<%= alertMessage %>',
+           icon:'<%= alertIcon %>',
+           showConfirmButton: <%= showConfirmButton %>,
+           timer: <%= timer %>
+         }).then(()=>{
+           window.location='/<%= ruta %>'
+         })
+         </script>
+       <% } %>
+           
+    </div>
+
+    <div class = "BarraFondo fondoLetras"><div id="clock">
+        <label id="date-time"></label>
+      </div>
+    </div>
+
+    
+</body>
+</html>

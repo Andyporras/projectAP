@@ -1,0 +1,114 @@
+
+
+
+.agregar{
+    margin-top: 7px;
+}
+
+.formulario {
+    text-align: center;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #f7f5f5;
+    width: 100%;
+    /* centrar el h2 */
+    text-align: center;
+
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+ 
+}
+
+.cont {
+   margin-top: 90px;
+   margin-left: 38%;
+   margin-bottom: 90px;
+
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+input[type="number"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+select {
+    appearance: none;
+    background-image: url("data:image/svg+xml;base64,AAAA") !important;
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: 20px;
+    padding-right: 30px;
+    cursor: pointer;
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+select:focus {
+    outline: none;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.contenedor-icono {
+    position: relative;
+}
+
+.icono-flecha {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+.producto{
+    width: 210px;
+}
+/* configuracion para que 2 input y label este al lado de cada uno, la clase es direccion*/
+.Direccion label {
+    display: inline-block;
+    width: 40%;
+    margin: 20px 0 5px 0;
+    margin-right: 20px;
+}
+.Direccion input {
+    width: 44%;
+    margin-right: 5px;
+    
+}
+.Direccion {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* configuracion para que 2 botones esten al lado de cada uno, la clase es boton */
+
+.boton {
+    margin: 1px 1px 1px 1px;
+    /* cada boton en una esquina */
+    width: 45%;
+}

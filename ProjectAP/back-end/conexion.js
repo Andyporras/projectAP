@@ -1,24 +1,27 @@
-// /mnt/data/app.js
-
 const mysql = require('mysql');
-
-// Configuración de la conexión
-const connection = mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    password: "root",
-    database: "IMDB2024"
+const conexion = mysql.createConnection({
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_NAME
+});
+conexion.connect((error) => {
+    if (error) {
+        console.log('El error de conexión es: ' + error);
+        return;
+    }
+    console.log('¡Conectado a la base de datos!');
 });
 
-// Conectar a la base de datos
-connection.connect((err) => {
-  if (err) {
-    console.error('Error conectando a la base de datos:', err.stack);
-    return;
-  }
-  console.log('Conectado a la base de datos con ID', connection.threadId);
+// seccion de consultas a la base de datos
+
+// 1 - Consulta para obtener todos los usuarios
+conexion.query('SELECT * FROM UserIMDB', (error, results) => {
+    if (error) {
+        throw error;
+    }
+    console.log(results);
 });
 
 
-// Cerrar la conexión
-connection.end();
+module.exports = conexion;

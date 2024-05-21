@@ -1,0 +1,80 @@
+
+
+
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #fff;
+}
+.agregar{
+    margin-top: 7px;
+}
+
+.form-group {
+    margin-bottom: 10px;
+}
+.contenedor{
+   margin-top: 60px;
+    margin-bottom: 40px;
+    margin-left: 655px;
+}
+
+label {
+    display: inline;
+    margin-bottom: 5px;
+   
+}
+
+
+
+
+input,
+select {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f7f7f7;
+}
+
+input[type="checkbox"] {
+    width: auto;
+    margin-right: 5px;
+}
+.botonEditar{
+    display: inline-block;
+    
+    margin-left: 99px;
+    margin-top: 10px;
+    padding: 5px 10px;
+    border: none;
+    background-color: #2C0B62;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+
+}
+.botonAgregar{
+    margin-left: 0px;
+    margin-bottom: 20px;
+}
+
+.botonEditar:hover {
+    background-color: #9781A1;
+}
+.boton{
+    margin-left: 41%;
+}
+
+
+.btn-login {
+    width: 95%;
+    padding: 10px;
+    background-color: #3F2B8E;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}

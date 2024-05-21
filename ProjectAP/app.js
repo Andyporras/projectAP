@@ -37,6 +37,9 @@ const conexion = require('./back-end/conexion');
 const loginRoutes = require('./back-end/login');
 app.use('/', loginRoutes);
 
+const registrarRoutes = require('./back-end/registrar');
+app.use('/', registrarRoutes);
+
 // 9 - Establecemos las rutas para las vistas
 // const registrarRoutes = require('./back-end/registrar');
 // app.use('/', registrarRoutes);

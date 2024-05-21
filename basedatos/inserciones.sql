@@ -2,7 +2,7 @@
 Use imdb2024;
 
 -- seleccionar la tabla de person y mostrar los datos
-SELECT * FROM Person;
+SELECT * FROM UserIMDB;
 
 
 -- insecion de datos en la tabla Country

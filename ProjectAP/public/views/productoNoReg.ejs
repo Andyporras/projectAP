@@ -13,19 +13,24 @@
    
    
  
-    <link rel="stylesheet" href="../archivosCSS/estilosGenerales.css">
+    <!-- <link rel="stylesheet" href="../archivosCSS/estilosGenerales.css">
     <link rel="stylesheet" href="../archivosCSS/estilosPantallasProds.css">
-    <link rel="stylesheet" href="../archivosCSS/estilosProducto.css">
+    <link rel="stylesheet" href="../archivosCSS/estilosProducto.css"> -->
+    <link rel="stylesheet" href="resources/css/estilosGenerales.css">
+    <link rel="stylesheet" href="resources/css/estilosPantallasProds.css">
+    <link rel="stylesheet" href="resources/css/estilosProducto.css">
     
 
-    <script type = "text/javaScript" src = "../../back-end/reloj.js"></script>
-    <script type = "text/javaScript" src = "../../back-end/main.js"></script>
+    <!-- <script type = "text/javaScript" src = "resources/back-end/reloj.js"></script>
+    <script type = "text/javaScript" src = "resources/back-end/main.js"></script> -->
+    <script type = "text/javaScript" src = "resources/js/reloj.js"></script>
+    <script type = "text/javaScript" src = "resources/js/main.js"></script>
 </head>
 <body class = "body">
     <nav class="navbar navbar-expand-lg navbar-dark navbarTodos fixed-top">
        
         <div class="container-fluid">
-        <a class="navbar-brand" href="landingPage.html">LOGO</a>
+        <a class="navbar-brand" href="landingPage">LOGO</a>
         <form class="d-flex" role="search">
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
             <button class="btn  botonarriba" type="submit">Buscar</button>
@@ -36,14 +41,14 @@
             <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
                 
                 <div class="navbar-nav">
-                    <a class="nav-link" aria-current="page" href="/fron-end/archivosHTML/seriesNoReg.html">Series</a>
-                    <a class="nav-link" href="/fron-end/archivosHTML/pelisNoReg.html" >Peliculas</a>
-                    <a class="nav-link" href="/fron-end/archivosHTML/docusNoReg.html">Documentales</a>
+                    <a class="nav-link" aria-current="page" href="seriesNoReg">Series</a>
+                    <a class="nav-link" href="pelisNoReg" >Peliculas</a>
+                    <a class="nav-link" href="docusNoReg">Documentales</a>
                         <div class="dropdown" style="float:right;">
                             <button class="dropbtn  drop" > <label for="" class = "icono">☰</label></button>
                             <div class="dropdown-content">
-                              <a href="/fron-end/archivosHTML/logIn.html">Iniciar Sesion</a>
-                              <a href="/fron-end/archivosHTML/landingPage.html">Salir</a>
+                              <a href="logIn">Iniciar Sesion</a>
+                              <a href="landingPage">Salir</a>
                             
                             </div>
                           </div>
@@ -60,7 +65,8 @@
             <div class="container">
                 <div class="row">
                   <div class="col">
-                    <img src="../../fotos/poster2.jpg" class = "imagen" alt="Poster Pelicula" >
+                    <!-- <img src="resources/fotos/poster2.jpg" class = "imagen" alt="Poster Pelicula" > -->
+                    <img src="resources/fotos/last-of-us-2.jpg" class = "imagen" alt="Poster Pelicula" >
                   </div>
                   <div class="col">
                     <label for="" class ="textos desc">   
@@ -128,8 +134,8 @@
     <div class="cont contenedor">
         <div class = "textos titulo">Direccion</div>
         <div >
-            <div  class = "contenido"> <a href=""><figure><img src="../../fotos/perfil.jpg" class = "imagenPerfil" alt="Poster Pelicula" ><figcaption  class = "titulos">Director: Craig Mazin</figcaption></figure></a></div>
-            <div  class = "contenido"> <a href=""><figure><img src="../../fotos/perfil.jpg" class = "imagenPerfil" alt="Poster Pelicula" ><figcaption  class = "titulos">Sub Director: Neil Druckmann</figcaption></figure></a></div>
+            <div  class = "contenido"> <a href=""><figure><img src="resources/fotos/perfil.jpg" class = "imagenPerfil" alt="Poster Pelicula" ><figcaption  class = "titulos">Director: Craig Mazin</figcaption></figure></a></div>
+            <div  class = "contenido"> <a href=""><figure><img src="resources/fotos/perfil.jpg" class = "imagenPerfil" alt="Poster Pelicula" ><figcaption  class = "titulos">Sub Director: Neil Druckmann</figcaption></figure></a></div>
         </div>
         
     </div>
@@ -137,16 +143,16 @@
     
         <div class = "textos titulo">Reparto</div>
         <div >
-            <div  class = "contenido"> <a href="/fron-end/archivosHTML/infoCreativoNoReg.html"><figure><img src="../../fotos/pascal.jpg" class = "imagenPerfil" alt="Poster Pelicula" ><figcaption  class = "titulos">Pedro Pascal</figcaption></figure></a></div>
-            <div  class = "contenido"> <a href=""><figure><img src="../../fotos/perfil.jpg" class = "imagenPerfil" alt="Poster Pelicula" ><figcaption  class = "titulos">Bella Ramsey</figcaption></figure></a></div>
+            <div  class = "contenido"> <a href="infoCreativoNoReg"><figure><img src="resources/fotos/pascal.jpg" class = "imagenPerfil" alt="Poster Pelicula" ><figcaption  class = "titulos">Pedro Pascal</figcaption></figure></a></div>
+            <div  class = "contenido"> <a href=""><figure><img src="resources/fotos/perfil.jpg" class = "imagenPerfil" alt="Poster Pelicula" ><figcaption  class = "titulos">Bella Ramsey</figcaption></figure></a></div>
         </div>
     </div>
     <div class="cont contenedor">
         <div class = "textos titulo">Escenas</div>
        
         <div >
-            <div  class = "contenido"> <figure><img src="../../fotos/last-of-us-2.jpg" class = "imagenPerfil" alt="Poster Pelicula" ><figcaption  class = "titulos"></figcaption></figure></div>
-            <div  class = "contenido"> <figure><img src="../../fotos/last-of-us-1.jpg" class = "imagenPerfil" alt="Poster Pelicula" ><figcaption  class = "titulos"></figcaption></figure></div>
+            <div  class = "contenido"> <figure><img src="resources/fotos/last-of-us-2.jpg" class = "imagenPerfil" alt="Poster Pelicula" ><figcaption  class = "titulos"></figcaption></figure></div>
+            <div  class = "contenido"> <figure><img src="resources/fotos/last-of-us-1.jpg" class = "imagenPerfil" alt="Poster Pelicula" ><figcaption  class = "titulos"></figcaption></figure></div>
         </div>
     </div>
     <div class="cont contenedor">

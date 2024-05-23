@@ -10,8 +10,8 @@
 
     <!-- <link rel="stylesheet" href="../fron-end/archivosCSS/estilosLanding.css">
     <link rel="stylesheet" href="../fron-end/archivosCSS/estilosGenerales.css"> -->
-    <link rel="stylesheet" href="resources/css/estilosGenerales.css">
-    <link rel="stylesheet" href="resources/css/estilosLanding.css">
+    <link rel="stylesheet" href="resources/CSS/estilosLanding.css">
+    <link rel="stylesheet" href="resources/CSS/estilosGenerales.css">
 
     <!-- <script type = "text/javaScript" src = "../back-end/reloj.js"></script> -->
     <script type = "text/javaScript" src="resources/js/reloj.js"></script>
@@ -38,13 +38,13 @@
                             <button class="dropbtn  drop" > <label for="" class = "icono">☰</label></button>
                             <div class="dropdown-content">
                               <% if (login) { %>                
-                                  <h1>Usuario conectado: <strong><%= name %></strong></h1>                        
-                                  <a href="logout" class="a-logout">Logout</a>
-                              <%} else { %>
-                                  <h1><strong><%= name %></strong></h1>   
-                                  <a href="login" class="a-login">Ir a Login</a>
-                              <% } %>
-                                    
+                                <h1>Usuario conectado: <strong><%= name %></strong></h1>                        
+                                <a href="logout" class="a-logout">Logout</a>
+                            <%} else { %>
+                                <!-- <h1><strong><%= name %></strong></h1>    -->
+                                <h1><strong>Usuario no conectado</strong></h1>
+                                <a href="login" class="a-login">Ir a Login</a>
+                            <% } %>
                             </div>
                           </div>
                 </div>

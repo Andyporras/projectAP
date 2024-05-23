@@ -34,6 +34,7 @@ router.post('/auth', async (req, res) => {
                 });
             }else{
                 req.session.name = results[0].username;
+                req.session.loggedin = true;
                 res.render('login', {
                     alert: true,
                     alertTitle: 'Conexión exitosa',
@@ -63,9 +64,7 @@ router.get('/logout', (req, res) => {
     });
 });
 
-router.get('/registrar', (req, res) => {
-    res.render('registrar');
-});
+
 
 
 // 12 - Método para controlar que está auth en todas las páginas

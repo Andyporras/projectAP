@@ -4,6 +4,12 @@ const bcryptjs = require('bcryptjs');
 const conexion = require('./conexion'); // Asegúrate de que la ruta es correcta
 const { post } = require('./login');
 
+
+
+router.get('/registrar', (req, res) => {
+    res.render('registrar');
+});
+
 //funcion para registrarse en la base de datos
 router.post('/registrar', async (req, res) => {
     const nombre = req.body.nombre;

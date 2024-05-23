@@ -40,30 +40,44 @@ app.use('/', loginRoutes);
 const registrarRoutes = require('./back-end/registrar');
 app.use('/', registrarRoutes);
 
+const docusNoRegRoutes = require('./back-end/docusNoReg');
+app.use('/', docusNoRegRoutes);
+
+const seriesNoRegRoutes = require('./back-end/seriesNoReg');
+app.use('/', seriesNoRegRoutes);
+
+const peliculasNoRegRoutes = require('./back-end/pelisNoReg');
+app.use('/', peliculasNoRegRoutes);
+
+const productoNoRegRoutes = require('./back-end/productoNoReg');
+app.use('/', productoNoRegRoutes);
+
+// const landingPageRoutes = require('./back-end/landingPage');
+// app.use('/', landingPageRoutes);
 // 9 - Establecemos las rutas para las vistas
 // const registrarRoutes = require('./back-end/registrar');
 // app.use('/', registrarRoutes);
 
 
 app.get('/landingPage', (req, res) => {
-    res.render('landingPage');
+     res.render('landingPage');
 });
 
-app.get('/docusNoReg', (req, res) => {
-    res.render('docusNoReg');
-});
+// app.get('/docusNoReg', (req, res) => {
+//     res.render('docusNoReg');
+// });
 
-app.get('/productoNoReg', (req, res) => {
-    res.render('productoNoReg');
-});
+// app.get('/productoNoReg', (req, res) => {
+//     res.render('productoNoReg');
+// });
 
-app.get('/pelisNoReg', (req, res) => {
-    res.render('pelisNoReg');
-});
+// app.get('/pelisNoReg', (req, res) => {
+//     res.render('pelisNoReg');
+// });
 
-app.get('/seriesNoReg', (req, res) => {
-    res.render('seriesNoReg');
-});
+// app.get('/seriesNoReg', (req, res) => {
+//     res.render('seriesNoReg');
+// });
 
 // 12 - Método para controlar que está auth en todas las páginas
 app.get('/', (req, res) => {
@@ -77,7 +91,7 @@ app.get('/', (req, res) => {
     } else {
         res.render('landingPage', {
             login: false,
-            name: 'Debe iniciar sesión',
+            name: 'Sesión no iniciada',
         });
     }
     res.end();

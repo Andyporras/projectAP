@@ -92,8 +92,35 @@ app.use('/', infoCreativoRegRoutes);
 const landingAdminRoutes = require('./back-end/landingAdmin');
 app.use('/', landingAdminRoutes);
 
+const landingRegistradoRoutes = require('./back-end/landingRegistrado');
+app.use('/', landingRegistradoRoutes);
 
+const modificarProductoRoutes = require('./back-end/modificarProducto');
+app.use('/', modificarProductoRoutes);
 
+const pagoRoutes = require('./back-end/pago');
+app.use('/', pagoRoutes);
+
+const pelisRegRoutes = require('./back-end/pelisReg');
+app.use('/', pelisRegRoutes);
+
+const pefilRoutes = require('./back-end/perfil');
+app.use('/', pefilRoutes);
+
+const productoAdminRoutes = require('./back-end/productoAdmin');
+app.use('/', productoAdminRoutes);
+
+const productoRegRoutes = require('./back-end/productoReg');
+app.use('/', productoRegRoutes);
+
+const productoRoutes = require('./back-end/producto');
+app.use('/', productoRoutes);
+
+const seriesRegRoutes = require('./back-end/seriesReg');
+app.use('/', seriesRegRoutes);
+
+const wishlistRoutes = require('./back-end/wishlist');
+app.use('/', wishlistRoutes);
 
 /*
 app.get('/landingPage', (req, res) => {

@@ -55,6 +55,9 @@ app.use('/', productoNoRegRoutes);
 const agregarCreativoRoutes = require('./back-end/agregarCreativo');
 app.use('/', agregarCreativoRoutes);
 
+const agregarProductoRoutes = require('./back-end/agregarProducto');
+app.use('/', agregarProductoRoutes);
+
 // const landingPageRoutes = require('./back-end/landingPage');
 // app.use('/', landingPageRoutes);
 // 9 - Establecemos las rutas para las vistas

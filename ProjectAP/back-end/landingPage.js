@@ -6,11 +6,18 @@ const { post } = require('./login');
 
 // funciones de landingPage
 router.get('/landingPage', (req, res) => {
-    //capturar la sesion
-    const sesion = req.session;
-    //mostrar en consola la sesion
-    console.log(sesion);
-    res.render('landingPage',);
+    if (req.session.loggedin) {
+        res.render('landingPage', {
+            login: true,
+            name: req.session.name,
+        });
+    }
+    else {
+        res.render('landingPage', {
+            login: false,
+            name: 'Sesión no iniciada',
+        });
+    }
 });
 
 module.exports = router;

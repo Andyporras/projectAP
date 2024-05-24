@@ -6,11 +6,18 @@ const { post } = require('./login');
 
 // funciones de agregarProducto
 router.get('/agregarProducto', (req, res) => {
-    //capturar la sesion
-    const sesion = req.session;
-    //mostrar en consola la sesion
-    console.log(sesion);
-    res.render('agregarProducto');
+    if(req.session.loggedin){
+        res.render('agregarProducto', {
+            login: true,
+            name: req.session.name,
+        });
+    }
+    else{
+        res.render('agregarProducto', {
+            login: false,
+            name: 'Sesión no iniciada',
+        });
+    }
 });
 
 

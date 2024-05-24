@@ -6,11 +6,18 @@ const { post } = require('./login');
 
 // funciones de editarPefil
 router.get('/editarPefil', (req, res) => {
-    //capturar la sesion
-    const sesion = req.session;
-    //mostrar en consola la sesion
-    console.log(sesion);
-    res.render('editarPefil');
+    if (req.session.loggedin) {
+        res.render('editarPefil', {
+            login: true,
+            name: req.session.name,
+        });
+    }
+    else {
+        res.render('editarPefil', {
+            login: false,
+            name: 'Sesión no iniciada',
+        });
+    }
 });
 
 module.exports = router;

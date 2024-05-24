@@ -6,11 +6,18 @@ const { post } = require('./login');
 
 // funciones de editarCreativo
 router.get('/editarCreativo', (req, res) => {
-    //capturar la sesion
-    const sesion = req.session;
-    //mostrar en consola la sesion
-    console.log(sesion);
-    res.render('editarCreativo');
+    if(req.session.loggedin){
+        res.render('editarCreativo', {
+            login: true,
+            name: req.session.name,
+        });
+    }
+    else{
+        res.render('editarCreativo', {
+            login: false,
+            name: 'Sesión no iniciada',
+        });
+    }
 });
 
 module.exports = router;

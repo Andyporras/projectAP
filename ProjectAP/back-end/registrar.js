@@ -7,6 +7,18 @@ const { post } = require('./login');
 
 
 router.get('/registrar', (req, res) => {
+    if (req.session.loggedin) {
+        res.render('registrar', {
+            login: true,
+            name: req.session.name,
+        });
+    }
+    else {
+        res.render('registrar', {
+            login: false,
+            name: 'Sesión no iniciada',
+        });
+    }
     res.render('registrar');
 });
 

@@ -70,33 +70,40 @@ app.use('/', editarCreativoRoutes);
 const editarPerfilRoutes = require('./back-end/editarPerfil');
 app.use('/', editarPerfilRoutes);
 
-// const landingPageRoutes = require('./back-end/landingPage');
-// app.use('/', landingPageRoutes);
-// 9 - Establecemos las rutas para las vistas
-// const registrarRoutes = require('./back-end/registrar');
-// app.use('/', registrarRoutes);
+
+const landingPageRoutes = require('./back-end/landingPage');
+app.use('/', landingPageRoutes);
+
+const estadisticasRoutes = require('./back-end/estadisticas');
+app.use('/', estadisticasRoutes);
+
+const historialRoutes = require('./back-end/historial');
+app.use('/', historialRoutes);
+
+const infoCreativoAdminRoutes = require('./back-end/infoCreativoAdmin');
+app.use('/', infoCreativoAdminRoutes);
+
+const infoCreativoNoRegRoutes = require('./back-end/infoCreativoNoReg');
+app.use('/', infoCreativoNoRegRoutes);
+
+const infoCreativoRegRoutes = require('./back-end/infoCreativoReg');
+app.use('/', infoCreativoRegRoutes);
+
+const landingAdminRoutes = require('./back-end/landingAdmin');
+app.use('/', landingAdminRoutes);
 
 
+
+
+/*
 app.get('/landingPage', (req, res) => {
-     res.render('landingPage');
+    //capturar la sesion
+    const sesion = req.session;
+    //mostrar en consola la sesion
+    console.log(sesion);
+    res.render('landingPage');
 });
-
-// app.get('/docusNoReg', (req, res) => {
-//     res.render('docusNoReg');
-// });
-
-// app.get('/productoNoReg', (req, res) => {
-//     res.render('productoNoReg');
-// });
-
-// app.get('/pelisNoReg', (req, res) => {
-//     res.render('pelisNoReg');
-// });
-
-// app.get('/seriesNoReg', (req, res) => {
-//     res.render('seriesNoReg');
-// });
-
+*/
 // 12 - Método para controlar que está auth en todas las páginas
 app.get('/', (req, res) => {
     console.log("pagina de inicio");
@@ -121,14 +128,14 @@ app.use((req, res, next) => {
         res.header('Cache-Control', 'private, no-cache, no-store, must-revalidate');
     next();
 });
-
+/*
 // Logout: destruye la sesión
 app.get('/logout', (req, res) => {
     req.session.destroy(() => {
         res.redirect('/'); // Siempre se ejecutará después de que se destruya la sesión
     });
 });
-
+*/
 // Inicia el servidor
 app.listen(3000, () => {
     console.log('Servidor escuchando en el puerto 3000');

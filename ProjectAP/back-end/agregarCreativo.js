@@ -6,11 +6,17 @@ const { post } = require('./login');
 
 // funciones de agregarCreativo
 router.get('/agregarCreativo', (req, res) => {
-    //capturar la sesion
-    const sesion = req.session;
-    //mostrar en consola la sesion
-    console.log(sesion);
-    res.render('agregarCreativo');
+    if (req.session.loggedin) {
+        res.render('agregarCreativo', {
+            login: true,
+            name: req.session.name,
+        });
+    } else {
+        res.render('agregarCreativo', {
+            login: false,
+            name: 'Sesión no iniciada',
+        });
+    }
 });
 
 module.exports = router;

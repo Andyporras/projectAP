@@ -7,7 +7,18 @@ const { post } = require('./login');
 // funciones de seriesNoReg
 
 router.get('/seriesNoReg', (req, res) => {
-    res.render('seriesNoReg');
+    if (req.session.loggedin) {
+        res.render('seriesNoReg', {
+            login: true,
+            name: req.session.name,
+        });
+    }
+    else {
+        res.render('seriesNoReg', {
+            login: false,
+            name: 'Sesión no iniciada',
+        });
+    }
 });
 
 

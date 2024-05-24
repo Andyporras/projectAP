@@ -6,7 +6,17 @@ const { post } = require('./login');
 
 // funciones de seriesNoReg
 router.get('/pelisNoReg', (req, res) => {
-    res.render('pelisNoReg');
+    if (req.session.loggedin) {
+        res.render('pelisNoReg', {
+            login: true,
+            name: req.session.name,
+        });
+    } else {
+        res.render('pelisNoReg', {
+            login: false,
+            name: 'Sesión no iniciada',
+        });
+    }
 });
 
 module.exports = router;

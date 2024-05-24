@@ -61,6 +61,9 @@ app.use('/', agregarProductoRoutes);
 const carritoRoutes = require('./back-end/carrito');
 app.use('/', carritoRoutes);
 
+const docusRegRoutes = require('./back-end/docusReg');
+app.use('/', docusRegRoutes);
+
 // const landingPageRoutes = require('./back-end/landingPage');
 // app.use('/', landingPageRoutes);
 // 9 - Establecemos las rutas para las vistas

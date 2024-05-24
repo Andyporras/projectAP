@@ -64,6 +64,12 @@ app.use('/', carritoRoutes);
 const docusRegRoutes = require('./back-end/docusReg');
 app.use('/', docusRegRoutes);
 
+const editarCreativoRoutes = require('./back-end/editarCreativo');
+app.use('/', editarCreativoRoutes);
+
+const editarPerfilRoutes = require('./back-end/editarPerfil');
+app.use('/', editarPerfilRoutes);
+
 // const landingPageRoutes = require('./back-end/landingPage');
 // app.use('/', landingPageRoutes);
 // 9 - Establecemos las rutas para las vistas

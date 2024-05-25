@@ -20,6 +20,9 @@
     text-align: center;
    
 }
+.logo{
+    width: 80px;
+}
 .cont {
     width: 500px;
     border:solid;

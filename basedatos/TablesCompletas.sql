@@ -1,3 +1,6 @@
+create database	IMDB2024;
+use IMDB2024;
+
 CREATE TABLE Country
 (
 	idCountry INT AUTO_INCREMENT PRIMARY KEY,
@@ -10,13 +13,7 @@ CREATE TABLE Province
     idCountry INT,
     FOREIGN KEY (idCountry) REFERENCES Country(idCountry) ON DELETE CASCADE
 );
-CREATE TABLE Distrit
-(
-	idDistrit INT AUTO_INCREMENT PRIMARY KEY,
-    distritName VARCHAR(255),
-    idCanton INT,
-    FOREIGN KEY (idCanton) REFERENCES Canton(idCanton) ON DELETE CASCADE
-);
+
 CREATE TABLE Canton
 (
 	idCanton INT AUTO_INCREMENT PRIMARY KEY,
@@ -24,6 +21,15 @@ CREATE TABLE Canton
     idProvince INT,
     FOREIGN KEY (idProvince) REFERENCES Province(idProvince) ON DELETE CASCADE
 );
+
+CREATE TABLE Distrit
+(
+	idDistrit INT AUTO_INCREMENT PRIMARY KEY,
+    distritName VARCHAR(255),
+    idCanton INT,
+    FOREIGN KEY (idCanton) REFERENCES Canton(idCanton) ON DELETE CASCADE
+);
+
 
 CREATE TABLE Gender 
 (
@@ -88,6 +94,11 @@ CREATE TABLE Purchase
     FOREIGN KEY (idUser) REFERENCES UserIMDB(idPerson) ON DELETE SET NULL
 );
 
+CREATE TABLE MediaType
+(
+	idMediaType INT AUTO_INCREMENT PRIMARY KEY,
+    tipo VARCHAR(255) UNIQUE
+);
 
 CREATE TABLE ProductAV
 (
@@ -133,11 +144,7 @@ CREATE TABLE category
     category_name VARCHAR(255) NOT NULL
 );
 
-CREATE TABLE MediaType
-(
-	idMediaType INT AUTO_INCREMENT PRIMARY KEY,
-    tipo VARCHAR(255) UNIQUE
-);
+
 
 CREATE TABLE Season
 (
@@ -146,6 +153,7 @@ CREATE TABLE Season
     link VARCHAR(255) NOT NULL,
     FOREIGN KEY (idSerie) REFERENCES ProductAV(id) ON DELETE CASCADE
 );
+
 CREATE TABLE Episode
 (
 	idEp INT AUTO_INCREMENT PRIMARY KEY,
@@ -171,6 +179,7 @@ CREATE TABLE Staff
     photo VARCHAR(255),
     activo INT
 );
+
 CREATE TABLE Relative -- x
 (
 	idRelative INT AUTO_INCREMENT PRIMARY KEY,

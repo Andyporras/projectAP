@@ -19,7 +19,6 @@ router.get('/registrar', (req, res) => {
             name: 'Sesión no iniciada',
         });
     }
-    res.render('registrar');
 });
 
 //funcion para registrarse en la base de datos

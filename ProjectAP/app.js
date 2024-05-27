@@ -136,12 +136,12 @@ app.get('/', (req, res) => {
     console.log("pagina de inicio");
     console.log(req.session.loggedin);
     if (req.session.loggedin) {
-        res.render('landingPage', {
+        res.render('index', {
             login: true,
             name: req.session.name,
         });
     } else {
-        res.render('landingPage', {
+        res.render('index', {
             login: false,
             name: 'Sesión no iniciada',
         });

@@ -7,7 +7,8 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> 
-   
+    <script src="https://cdn.syncfusion.com/ej2/dist/ej2.min.js" type="text/javascript"></script>
+    <script src=" https://cdn.anychart.com/releases/8.0.0/js/anychart-base.min.js" type="text/javascript"></script>
 <!--    
     <link rel="stylesheet" href="../archivosCSS/estilosPantallasProds.css">
  
@@ -20,8 +21,9 @@
 
     <!-- <script type = "text/javaScript" src = "resources/back-end/reloj.js"></script> -->
     <script type = "text/javaScript" src = "resources/js/reloj.js"></script>
+    <script type = "text/javaScript" src = "resources/js/estadisticas.js"></script>
 </head>
-<body class = "body">
+<body class = "body" onload = "cargaGraficos()">
     <nav class="navbar navbar-expand-lg navbar-dark navbarTodos fixed-top">
        
         <div class="container-fluid">
@@ -64,100 +66,82 @@
     </nav>
     
     <div class="cont contenedor primero">
-        <div class = "titulo textos">Benedict Cumberbatch</div>
-        <div>
+        <div class = "titulo textos">Estadísticas</div>
 
-            <div class="container">
-                <div class="row">
-                  <div class="col">
-                    <img src="resources/fotos/cumberbatch.jpg" class = "imagen" alt="Poster Pelicula" >
-                  </div>
-                  <div class="col">
-                    <label for="" class ="textos desc">    Es un actor británico de televisión, teatro, cine y voz. Accedió a la fama con su 
-                        interpretación de Stephen Hawking en la película televisiva Hawking (2004); posteriormente, interpretó el personaje 
-                        de William Pitt en la película histórica Amazing Grace (2006), así como el rol del célebre detective Sherlock Holmes en 
-                        una adaptación moderna del personaje de Arthur Conan Doyle, en la serie Sherlock (2010-2017). En el 2015, recibió su primera 
-                        nominación a un Óscar a mejor actor, por su papel en la película The Imitation Game. 
-                        </label>
-                  </div>
-                
-                </div>
-              </div>
-            
-          
-               
-        
-            
-        </div>
+        <div class = "filtro">
     
+            <button class="btn btn-secondary dropdown-toggle boton filtroBtn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Filtro
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Genero</a></li>
+              <li><a class="dropdown-item" href="#">Nacionalidad</a></li>
+              
+            </ul>
+          </div>
+
+          <div id="container"></div>
+
+
     </div>
     <div class="cont contenedor">
-    <div class = "titulo textos">Datos Personales</div>
-    <div>
-        <label for="" class = "textos">Ocupación: </label>
-        <label for="" class = "textos">Actor </label>
-    </div>
-    <div>
-        <label for="" class = "textos">Altura: </label>
-        <label for="" class = "textos">1.83 m </label>
-    </div>
-    <div>
-        <label for="" class = "textos">Nacionalidad: </label>
-        <label for="" class = "textos">Inglés </label>
-    </div>
-    <div>
-        <label for="" class = "textos">Lugar de Nacimiento: </label>
-        <label for="" class = "textos">Londres, Reino Unido  </label>
-    </div>
-    <div>
-        <label for="" class = "textos">Fecha de Nacimiento: </label>
-        <label for="" class = "textos">19/7/1976 </label>
-    </div>
-    <div>
-        <label for="" class = "textos">Padres: </label>
-        <label for="" class = "textos">Timothy Carlton, Wanda Ventham </label>
-    </div>
-    <div>
-        <label for="" class = "textos">Hijos: </label>
-        <label for="" class = "textos">Christopher Carlton, Hal Auden, Finn </label>
-    </div>
-    <div>
-        <label for="" class = "textos">Pareja: </label>
-        <label for="" class = "textos">Sophie Hunter (2015-F.) </label>
-    </div>
-    <div>
-        <label for="" class = "textos">Hermanos: </label>
-        <label for="" class = "textos">Tracy Tabernacle </label>
-    </div>
+   
+        <div class = "filtro">
+    
+            <button class="btn btn-secondary dropdown-toggle boton filtroBtn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Filtro
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Genero</a></li>
+              <li><a class="dropdown-item" href="#">Nacionalidad</a></li>
+              
+            </ul>
+          </div>
+            <div id="containers" style="width: 50%; height: 100%"></div>
+
     </div>
     <div class="cont contenedor">
-        <div class = "titulo textos">Curiosidades</div>
         <div>
-            <label for="" class = "textos">Sus padres Timothy Carlton y Wanda Ventham Tambien actuaron como sus padres en Sherlock(2010) </label>
+            <label for="" class = "textos">Género: </label>
+            <label for="" class = "textos">Mujeres: 34-68% </label>
         </div>
-      
     
     </div>
         <div class="cont contenedor">
-            <div class = "titulo textos">Trabajos</div>
-
-            <div class="contenedorScroll">
-                <div  class = "contenido"> <a href="productoNoReg"><figure><img src="resources/fotos/poster1.jpg" class = "imagenScroll" alt="Poster Pelicula" ><figcaption  class = "titulos">The Imitation Game</figcaption></figure></a></div>
-                <div  class = "contenido"> <a href=""><figure><img src="resources/fotos/poster1.jpg" class = "imagenScroll" alt="Poster Pelicula" ><figcaption  class = "titulos">The Imitation Game</figcaption></figure></a></div>
-                <div  class = "contenido"> <a href=""><figure><img src="resources/fotos/poster1.jpg" class = "imagenScroll" alt="Poster Pelicula" ><figcaption  class = "titulos">The Imitation Game</figcaption></figure></a></div>
-                <div  class = "contenido"> <a href=""><figure><img src="resources/fotos/poster1.jpg" class = "imagenScroll" alt="Poster Pelicula" ><figcaption  class = "titulos">The Imitation Game</figcaption></figure></a></div>
-                <div  class = "contenido"> <a href=""><figure><img src="resources/fotos/poster1.jpg" class = "imagenScroll" alt="Poster Pelicula" ><figcaption  class = "titulos">The Imitation Game</figcaption></figure></a></div>
-                <div  class = "contenido"> <a href=""><figure><img src="resources/fotos/poster1.jpg" class = "imagenScroll" alt="Poster Pelicula" ><figcaption  class = "titulos">The Imitation Game</figcaption></figure></a></div>
-                <div  class = "contenido"> <a href=""><figure><img src="resources/fotos/poster1.jpg" class = "imagenScroll" alt="Poster Pelicula" ><figcaption  class = "titulos">The Imitation Game</figcaption></figure></a></div>
-                <div  class = "contenido"> <a href=""><figure><img src="resources/fotos/poster1.jpg" class = "imagenScroll" alt="Poster Pelicula" ><figcaption  class = "titulos">The Imitation Game</figcaption></figure></a></div>
-                <div  class = "contenido"> <a href=""><figure><img src="resources/fotos/poster1.jpg" class = "imagenScroll" alt="Poster Pelicula" ><figcaption  class = "titulos">The Imitation Game</figcaption></figure></a></div>
-                <div  class = "contenido"> <a href=""><figure><img src="resources/fotos/poster1.jpg" class = "imagenScroll" alt="Poster Pelicula" ><figcaption  class = "titulos">The Imitation Game</figcaption></figure></a></div>
-                <div  class = "contenido"> <a href=""><figure><img src="resources/fotos/poster1.jpg" class = "imagenScroll" alt="Poster Pelicula" ><figcaption  class = "titulos">The Imitation Game</figcaption></figure></a></div>
-           
-               </div>
+            <div class = "titulo textos">Bitácora</div>
+            <table class="table tabla">
+                <thead class = "table-light">
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Col1</th>
+                    <th scope="col">Col2</th>
+                    <th scope="col">Col3</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">Fila1</th>
+                    <td>1-1</td>
+                    <td>1-2</td>
+                    <td>1-3</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Fila2</th>
+                    <td>2-1</td>
+                    <td>2-2</td>
+                    <td>2-3</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Fila3</th>
+                    <td>3-1</td>
+                    <td>3-2</td>
+                    <td>3-3</td>
+                  </tr>
+                </tbody>
+              </table>
 
                <div>
-                <button class = "boton " >Volver</button>
+                <button class = "boton " onclick="history.back()">Volver</button>
                </div>
     
         </div>

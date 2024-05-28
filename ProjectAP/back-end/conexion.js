@@ -23,5 +23,13 @@ conexion.query('SELECT * FROM UserIMDB', (error, results) => {
     console.log(results);
 });
 
+// obtener los genero de las personas
+conexion.query('SELECT * FROM gender', (error, results) => {
+    if (error) {
+        throw error;
+    }
+    console.log(results);
+});
+
 
 module.exports = conexion;

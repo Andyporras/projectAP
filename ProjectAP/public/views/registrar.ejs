@@ -81,7 +81,7 @@
             </div>
             <div class="form-group">
                 <label for="contrasena" class = "textos">Contraseña:</label>
-                <input type="password" id="contrasena" name="contrasena" placeholder="Contraseña" required>
+                <input type="password" id="contrasena" name="contrasena" placeholder="contrasena" required>
             </div>
             <div class="form-group">
                 <label for="confirmar_contrasena" class = "textos">Confirmar contraseña:</label>
@@ -93,16 +93,25 @@
             </div>
             <div class="form-group">
                 <label for="genero" class = "textos">Género:</label>
+                <!-- obtener los generos de la base de datos -->
+                <% //obtener los generos de la base de datos %> 
+                <select id="genero" name="genero">
+                    <option value="">Selecciona tu género</option>
+                    <option value="Masculino">Masculino</option>
+                    <option value="Femenino">Femenino</option>
+                    <option value="Otro">Otro</option>
+                </select>
+                <!--    
                 <select id="genero" name="genero">
                     <option value="">Selecciona tu género</option>
                     <option value="masculino">Masculino</option>
                     <option value="femenino">Femenino</option>
                     <option value="otro">Otro</option>
-                </select>
+                </select> -->
             </div>
             <div class="form-group">
                 <label for="foto" class = "textos">Foto de perfil:</label>
-                <input type="file" id="foto" name="foto" >
+                <input type="file" id="foto" name="foto" required>
             </div>
             <div class="form-group">
                 <label for="nationality" class = "textos">Nacionalidad:</label>

@@ -21,6 +21,19 @@ router.get('/registrar', (req, res) => {
     }
 });
 
+//funcion para obtener el genero de la persona
+function getGenero(genero) {
+    var idGenero = 0;
+    if (genero === 'Masculino') {
+        idGenero = 1;
+    } else if (genero === 'Femenino') {
+        idGenero = 2;
+    } else if (genero === 'Otro') {
+        idGenero = 3;
+    }
+    return idGenero;
+}
+
 //funcion para registrarse en la base de datos
 router.post('/registrar', async (req, res) => {
     const nombre = req.body.nombre;
@@ -31,8 +44,8 @@ router.post('/registrar', async (req, res) => {
     const correo = req.body.correo;
     const telefono = req.body.telefono;
     const usuario = req.body.usuario;
-    const constraseña = req.body.constrasena;
-    const confirmar_constraseña = req.body.confirmar_constrasena;
+    const contraseña = req.body.contrasena;
+    const confirmar_constraseña = req.body.confirmar_contrasena;
     const fecha_nacimiento = req.body.fecha_nacimiento;
     const genero = req.body.genero;
     const foto = req.body.foto;
@@ -42,13 +55,56 @@ router.post('/registrar', async (req, res) => {
     console.log(nombre);
     console.log(apellido);
     console.log(cedula);
-    console.log(constraseña);
+    console.log(contraseña);
     console.log(confirmar_constraseña);
 
     //comprobar que los campos no esten vacios
-    if (nombre && apellido && cedula && correo && telefono && usuario && constraseña && confirmar_constraseña && fecha_nacimiento && genero && foto && nationality) {
+    if (nombre && apellido && cedula && correo && telefono && usuario && contraseña && confirmar_constraseña && fecha_nacimiento && genero && foto && nationality) {
+       console.log("entro");
         //comprobar que las contraseñas sean iguales
-        if (constraseña == confirmar_constraseña) {
+        if (contraseña === confirmar_constraseña) {
+            //encriptar la contraseña
+            let passHash = await bcryptjs.hash(contraseña, 8);
+            //insertar los datos en la base de datos
+            console.log(contraseña);
+            /*
+            CREATE PROCEDURE addPerson (IN nameP VARCHAR(255), IN birth DATE, IN gen INT, IN mailVar VARCHAR(255),
+							IN phoneVar VARCHAR(255), IN nationalityVar VARCHAR(255), IN photoVar VARCHAR(255), in identV VARCHAR(255), IN idDistV INT)
+            BEGIN
+                INSERT INTO Person(name_person, birthdate, gender, mail, phone, nationality, photo, identification, idDistrit, activo)
+                Values (nameP, birth, gen, mailVar, phoneVar, nationalityVar, photoVar, identV, idDistV,1);
+            END//
+            */
+           var idGenero = getGenero(genero);
+            conexion.query('CALL addPerson(?,?,?,?,?,?,?,?,?)', [nombre, fecha_nacimiento, idGenero, correo, telefono, nationality, foto, cedula, 1], async (error, results) => {
+                if (error) {
+                    console.log(error);
+                }
+                console.log(results);
+            });
+            /*
+            CREATE PROCEDURE addUser (IN nameV VARCHAR(255), IN passVar VARCHAR(255))
+            BEGIN
+                INSERT INTO userIMDB(idPerson, username, pass, activo)
+                Values (last_insert_id(), nameV, passVar, 1);
+            END//
+            */
+            conexion.query('CALL addUser(?,?)', [usuario, contraseña], async (error, results) => {
+                if (error) {
+                    console.log(error);
+                }
+                console.log(results);
+            });
+            console.log("entro2");
+            res.render('registrar', {
+                alert: true,
+                alertTitle: 'Registration',
+                alertMessage: '¡Successful Registration!',
+                alertIcon: 'success',
+                showConfirmButton: false,
+                timer: 1500,
+                ruta: ''
+            });
             
         } else {
             res.render('registrar', {

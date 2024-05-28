@@ -199,6 +199,7 @@ CREATE TABLE StaffType
 	idType INT AUTO_INCREMENT PRIMARY KEY,
 	staffT_name VARCHAR(255) UNIQUE NOT NULL
 );
+
 CREATE TABLE ProductxStaff -- x un producto tiene n staff y un estaff trabaja en n peliculas
 (
 	idPxS INT AUTO_INCREMENT PRIMARY KEY,

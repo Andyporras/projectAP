@@ -59,14 +59,14 @@
     </nav>
     <div class="cont contenedor">
         <h2>Registrar Creativo</h2>
-        <form action="#">
+        <form action="agregarCreativo" method="post">
             <div class="form-group">
                 <label for="nombre" class = "textos">Nombre:</label>
-                <input type="text" id="nombre" name="nombre" placeholder="Nombre">
+                <input type="text" id="nombre" name="nombre" placeholder="Nombre" required>
             </div>
             <div class="form-group">
                 <label for="nombre" class = "textos">Segundo Nombre:</label>
-                <input type="text" id="nombre" name="nombre" placeholder="Segundo Nombre">
+                <input type="text" id="nombre" name="nombre" placeholder="Segundo Nombre" required>
             </div>
             <div class="form-group">
                 <label for="apellido" class = "textos">Apellido:</label>
@@ -74,50 +74,48 @@
             </div>
             <div class="form-group">
                 <label for="apellido" class = "textos">Segundo Apellido:</label>
-                <input type="text" id="apellido" name="apellido" placeholder="Segundo Apellido">
+                <input type="text" id="apellido" name="apellido" placeholder="Segundo Apellido" required>
             </div>
             <div class="form-group">
                 <label for="fecha_nacimiento" class = "textos">Fecha de nacimiento:</label>
-                <input type="date" id="fecha_nacimiento" name="fecha_nacimiento">
+                <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" placeholder="fecha_nacimiento" required>
             </div>
             <div class="form-group">
-                <label for="cedula" class = "textos">Lugar de Nacimiento:</label>
-                <input type="text" id="cedula" name="cedula" placeholder="Lugar de Nacimiento">
+                <label for="lugar_nacimiento" class = "textos">Lugar de Nacimiento:</label>
+                <input type="text" id="lugar_nacimiento" name="lugar_nacimiento" placeholder="lugar_nacimiento" required>
             </div>
             <div class="form-group">
                 <label for="nationality" class = "textos">Nacionalidad:</label>
-                <input type="text" id = "national
-                ity" name="national
-                ity" placeholder="Tu nacionalidad">
+                <input type="text" id = "nationality" name="nationality" placeholder="nationality" required>
             </div>
             <div class="form-group">
-                <label for="apellido" class = "textos">Biografia:</label>
-                <input type="text" id="apellido" name="apellido" placeholder="Biografia">
+                <label for="biografia" class = "textos">Biografia:</label>
+                <input type="text" id="Biografia" name="biografia" placeholder="biografia" required>
             </div>
             <div class="form-group">
                 <label for="allegado" class = "textos">Allegado:</label>
                 <button class = "boton">Agregar</button>
             
                 <div class="Direccion">
-                    <label for="nombre" class = "textos">Nombre</label>
+                    <label for="nombre2" class = "textos">Nombre</label>
                     <label for="parentesco" class = "textos">Parentesco</label>
                     <!-- <input type="text" id="direccion" name="direccion" placeholder="Cédula"> -->
                 </div>
                 <div class="Direccion">
-                    <input type="text" id="nombre" name="nombre" placeholder="Nombre">
-                    <input type="text" id="parentesco" name="rol" placeholder="Parentesco">
+                    <input type="text" id="nombre2" name="nombre2" placeholder="Nombre2" required>
+                    <input type="text" id="parentesco" name="parentesco" placeholder="Parentesco" required>
                 </div>
             </div>
             <div class="form-group">
-                <label for="telefono" class = "textos">Altura:</label>
-                <input type="tel" id="altura" name="altura" placeholder="Altura">
+                <label for="altura" class = "textos">Altura:</label>
+                <input type="tel" id="altura" name="altura" placeholder="Altura" required>
             </div>
             <div class="form-group">
-                <label for="usuario" class = "textos">Datos Trivia:</label>
-                <input type="text" id="trivia" name="trivia" placeholder="Datos Trivia">
+                <label for="datosTrivia" class = "textos">Datos Trivia:</label>
+                <input type="text" id="datosTrivia" name="datosTrivia" placeholder="datosTrivia" required>
             </div>
             <div class="form-group">
-                <label for="contraseña" class = "textos">Trabajos:</label>
+                <label for="Trabajos" class = "textos">Trabajos:</label>
                 <button class = "boton">Agregar</button>
                 <div class="Direccion">
                     <label for="producto" class = "textos">Producto</label>
@@ -125,24 +123,25 @@
                     <!-- <input type="text" id="direccion" name="direccion" placeholder="Cédula"> -->
                 </div>
                 <div class="Direccion">
-                    <select id="producto" name="plataformas" class = "producto">
+                    <select id="producto" name="producto">
                         <option value="">Selecciona un producto</option>
-                        <option value="pelicula">Pelicula</option>
+                        <option value="Pelicula">Pelicula</option>
                         
                     </select>
-                    <input type="text" id="rol" name="rol" placeholder="Rol">
+                    <input type="text" id="rol" name="rol" placeholder="Rol" required>
                 </div>
                
             </div>
            
             <div class="form-group">
                 <label for="foto" class = "textos">Foto:</label>
-                <input type="file" id="foto" name="foto" class = "textos">
+                <input type="file" id="foto" name="foto" class = "textos" required>
             </div>
             
   
             <button type="button" class = "boton" onclick = "history.back()">Volver</button>
-            <button type="submit" class = "boton">Guardar</button>
+            <input type="submit" class="btn-creativo" value="agregarCreativo">
+            <!-- <button type="submit" class = "boton">Guardar</button> -->
         </form>
     </div>
     

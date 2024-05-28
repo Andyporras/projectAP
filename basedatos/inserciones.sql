@@ -8,6 +8,7 @@ select *from gender;
 select *from person;
 select *from userIMDB;
 select *from distrit;
+select *from creativo;
 
 SELECT * FROM UserIMDB WHERE username =andycr;
 
@@ -72,3 +73,39 @@ CREATE PROCEDURE addUser (IN nameV VARCHAR(255), IN passVar VARCHAR(255))
    END//
 
 CALL addUser('user2', '1234');
+
+
+-- ####################################### creativo ########################################
+-- 	añade staff nombre, nacimiento, nacionalidad, biorgafia, altura, dato, foto, lugar ne nacimiento
+CREATE PROCEDURE addStaff(IN nameV VARCHAR(255), birthV DATE, IN natV VARCHAR(225),
+				IN bio VARCHAR(255), IN heightV VARCHAR(255), IN factV VARCHAR(255), IN photoV VARCHAR(255), IN placeV VARCHAR(255))
+   BEGIN
+	 INSERT INTO staff(staff_name, birthdate, nationality, biography, height, fact, photo, birthPlace, activo)
+     Values (nameV, birthV, natV, bio, heightV, factV, photoV, placeV, 1);
+   END//
+
+CALL addStaff('staff1', '1999-01-01', 'costarricense', 'bio1', '1.80', 'dato1', 'foto1', 'lugar1');
+
+
+CREATE PROCEDURE addRelative(IN nameVar VARCHAR(255))
+   BEGIN
+	 INSERT INTO Relative(relative_name)
+     Values (nameVar);
+   END//
+
+CALL addRelative('relative1');
+
+-- lo relaciona con algun staff y le define la relacion
+CREATE PROCEDURE addRelativexStaff(IN idStaffV INT, IN idRelativeV INT, in relationVar VARCHAR(255))
+   BEGIN
+     INSERT INTO RelativexStaff(idStaff, idRelativexStaff, relation)
+     VALUES (idStaffV, idRelativeV, relationVar);
+   END//
+
+CALL addRelativexStaff(1, 1, 'hermano');
+
+-- sacar el id de la persona que se acaba de logear con el username y la contraseña
+-- y verificar si el id de la persona esta en la tabla administrator
+SELECT idPerson FROM UserIMDB WHERE username = 'user1' AND pass = '1234';
+SELECT * FROM Administrator WHERE idPerson = idPerson;
+

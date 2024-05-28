@@ -112,3 +112,17 @@ button:hover {
     /* cada boton en una esquina */
     width: 45%;
 }
+
+.btn-creativo {
+    margin: 1px 1px 1px 1px;
+    /* cada boton en una esquina */
+    width: 45%;
+    margin-top: 10px;
+    padding: 5px 10px;
+    border: none;
+    background-color: #2C0B62;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}

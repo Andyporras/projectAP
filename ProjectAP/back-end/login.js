@@ -3,7 +3,8 @@ const router = express.Router();
 const bcryptjs = require('bcryptjs');
 const conexion = require('./conexion'); // Asegúrate de que la ruta es correcta
 
-
+//funcion para saber si es un usuario o un administrador
+var idPerson;
 //tabla se llama UserIMDB y las columnas son username, pass
 router.post('/auth', async (req, res) => {
     const usuario = req.body.usuario;
@@ -35,20 +36,46 @@ router.post('/auth', async (req, res) => {
                     ruta: 'login'
                 });
             }else{
-                req.session.name = results[0].username;
-                req.session.loggedin = true;
-                res.render('login', {
-                    alert: true,
-                    alertTitle: 'Conexión exitosa',
-                    alertMessage: 'Login correcto',
-                    alertIcon: 'success',
-                    showConfirmButton: true,
-                    timer: 1500,
-                    ruta: ''
+                console.log("no hay error")
+                console.log(results[0].idPerson)
+                // revisar si es un usuario o un administrador
+                idPerson = results[0].idPerson;
+                console.log("idPerson: " + idPerson);
+                conexion.query('SELECT * FROM Administrator WHERE idUser = ?', [idPerson], async (error, results2) => {
+                    console.log(results2);
+                    if(results2.length === 0){
+                        req.session.loggedin = true;
+                        req.session.name = usuario;
+                        res.render('login', {
+                            alert: true,
+                            alertTitle: '¡Éxito!',
+                            alertMessage: '¡Bienvenido!',
+                            alertIcon: 'success',
+                            showConfirmButton: false,
+                            timer: 1500,
+                            ruta: 'landingRegistrado'
+                        });
+                    }
+                    else{
+                        req.session.loggedin = true;
+                        req.session.name = usuario;
+                        res.render('login', {
+                            alert: true,
+                            alertTitle: '¡Éxito!',
+                            alertMessage: '¡Bienvenido!',
+                            alertIcon: 'success',
+                            showConfirmButton: false,
+                            timer: 1500,
+                            ruta: 'landingAdmin'
+                        });
+                    }
+                    res.end();
                 });
             }
-            res.end();
         });
+        console.log("login");
+        console.log("idPerson: " + idPerson);
+        
     }else {
         res.send('Por favor, ingrese usuario y contraseña');
         res.end();

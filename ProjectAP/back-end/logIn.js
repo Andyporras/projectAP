@@ -15,10 +15,12 @@ router.post('/auth', async (req, res) => {
         conexion.query('SELECT * FROM UserIMDB WHERE username = ?', [usuario], async (error, results) => {
             //mostrar en consola los resultados
             console.log("tamaño de resultados: " + results.length);
+            /*
             console.log("password: " + results[0].pass);
             console.log("usuario: " + results[0].username);
             console.log(password == results[0].pass);
             console.log(results.length === 0);
+            */
             // console.log(results.length == 0 || (await bcryptjs.compare(password, results[0].pass)) )
             if(results.length === 0 || !(password == results[0].pass) ){
                 // console.log('Usuario o contraseña incorrectos');

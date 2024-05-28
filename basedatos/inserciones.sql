@@ -5,6 +5,12 @@ Use imdb2024;
 SELECT * FROM UserIMDB;
 
 select *from gender;
+select *from person;
+select *from userIMDB;
+select *from distrit;
+
+SELECT * FROM UserIMDB WHERE username =andycr;
+
 
 -- insecion de datos en la tabla Country
 INSERT INTO Country (countryName) VALUES ('Costa Rica');
@@ -57,7 +63,7 @@ CREATE PROCEDURE addPerson (IN nameP VARCHAR(255), IN birth DATE, IN gen INT, IN
 
 // insercion de datos en la tabla Person con el procedimiento almacenado
 CALL addPerson('user2', '1999-01-01', 1, 'masculino', '12345678', 'costarricense', 'foto1', '123456789', 1);
-
+select *from person;
 
 CREATE PROCEDURE addUser (IN nameV VARCHAR(255), IN passVar VARCHAR(255))
    BEGIN

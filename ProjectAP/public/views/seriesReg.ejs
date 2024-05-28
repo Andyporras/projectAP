@@ -18,8 +18,9 @@
 
     <!-- <script type = "text/javaScript" src = "../../back-end/reloj.js"></script> -->
     <script type = "text/javaScript" src="resources/js/reloj.js"></script>
+    <script type = "text/javaScript" src = "resources/js/funcionesProductos.js"></script>
 </head>
-<body class = "body">
+<body class = "body" onload = "cargaSeriesReg()">
     <nav class="navbar navbar-expand-lg navbar-dark navbarTodos fixed-top">
        
         <div class="container-fluid">
@@ -42,7 +43,7 @@
                             <div class="dropdown-content">
                               <a href="perfil">Perfil</a>
                               <a href="wishlist">Wishlist</a>
-                              <a href="historial">Historial</a>
+                              <a href="historial">Favoritos</a>
                               <a href="carrito">Carrito</a>
                               <a href="/">Cerrar Sesión</a>
                             </div>
@@ -66,41 +67,10 @@
           </div>
     </div>
 
-    <div class="cont contenedor">
+    <div class="cont contenedor" id = "productos">
 
 
-    <div class = "producto">
-        <div class="container text-center">
-            <div class="row">
-              <div class="col">
-                
-                <a href="productoReg"> <img src="resources/fotos/poster2.jpg" class = "imagen" alt="Poster Pelicula" ></a>
-              </div>
-              <div class="col centro">
-                <a href="#"><label for="" class = "textos titulo">The Last of Us</label></a>
-                <a href="#"> <label for="" class = "textos">Joel, un superviviente de carácter recio, es contratado para sacar de contrabando a Ellie, una niña de 14 años, fuera de una opresiva zona de cuarentena. Lo que comienza como un pequeño trabajo pronto se convierte en un viaje brutal y desgarrador, ya que ambos deben atravesar los EE. UU.</label></a>
-                
-               
-                <label for="" class = "textos rating">Rating: </label><span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star unchecked"></span>  
-                <div>
-                    <label for="" class = "textos categorias terror">Terror</label>
-                    <label for="" class = "textos categorias drama">Drama</label>
-                    <label for="" class = "textos categorias temporadas">1T 9EP</label>
-                    <label for="" class = "textos categorias año">2023</label>
-                </div>
-                
-            </div>
-              <div class="col derecha">
-                <button class = "boton botonesDerecha">+</button>
-                <button class = "boton botonesDerecha"><i class="fa fa-heart"></i></button>
-              </div>
-            </div>
-          </div>
-    </div>
+  
     
  
 

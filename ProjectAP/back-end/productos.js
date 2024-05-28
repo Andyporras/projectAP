@@ -3,15 +3,15 @@ const router = express.Router();
 const conexion = require('./conexion'); // Asegúrate de que la ruta es correcta
 const { post } = require('./login');
 
-// funciones de wislist
-router.get('/wishlist', (req, res) => {
+// funciones de productoReg
+router.get('/productos', (req, res) => {
     if (req.session.loggedin) {
-        res.render('wislist', {
+        res.render('productos', {
             login: true,
             name: req.session.name,
         });
     } else {
-        res.render('wishlist', {
+        res.render('productos', {
             login: false,
             name: 'Sesión no iniciada',
         });

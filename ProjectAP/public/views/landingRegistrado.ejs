@@ -15,8 +15,9 @@
 
     <!-- <script type = "text/javaScript" src = "../../back-end/reloj.js"></script> -->
     <script type = "text/javaScript" src="resources/js/reloj.js"></script>
+    <script type = "text/javaScript" src = "resources/js/funcionesLanding.js"></script>
 </head>
-<body class = "body">
+<body class = "body"  onload="cargaLandingReg()">
     <nav class="navbar navbar-expand-lg navbar-dark navbarTodos fixed-top">
        
         <div class="container-fluid">
@@ -31,14 +32,14 @@
             <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
                 
                 <div class="navbar-nav">
-                    <a class="nav-link" aria-current="page" href="=seriesReg">Series</a>
+                    <a class="nav-link" aria-current="page" href="seriesReg">Series</a>
                     <a class="nav-link" href="pelisReg" >Peliculas</a>
                     <a class="nav-link" href="docusReg">Documentales</a>
                         <div class="dropdown" style="float:right;">
                             <button class="dropbtn  drop" > <label for="" class = "icono">☰</label></button>
                             <div class="dropdown-content">
                               <a href="perfil">Perfil</a>
-                              <a href="wishlist">Wishlist</a>
+                              <a href="wishlist">Favoritos</a>
                               <a href="historial">Historial</a>
                               <a href="carrito">Carrito</a>
                               <a href="/">Cerrar Sesión</a>
@@ -66,19 +67,8 @@
             </ul>
           </div>
     </div>
-    <div class="scroll-container">
-         <div  class = "contenido"> <a href=""><figure><img src="resources/fotos/poster1.jpg" class = "imagen" alt="Poster Pelicula" ><figcaption  class = "titulos">The Imitation Game</figcaption></figure></a></div>
-         <div  class = "contenido"> <a href=""><figure><img src="resources/fotos/poster1.jpg" class = "imagen" alt="Poster Pelicula" ><figcaption  class = "titulos">The Imitation Game</figcaption></figure></a></div>
-         <div  class = "contenido"> <a href=""><figure><img src="resources/fotos/poster1.jpg" class = "imagen" alt="Poster Pelicula" ><figcaption  class = "titulos">The Imitation Game</figcaption></figure></a></div>
-         <div  class = "contenido"> <a href=""><figure><img src="resources/fotos/poster1.jpg" class = "imagen" alt="Poster Pelicula" ><figcaption  class = "titulos">The Imitation Game</figcaption></figure></a></div>
-         <div  class = "contenido"> <a href=""><figure><img src="resources/fotos/poster1.jpg" class = "imagen" alt="Poster Pelicula" ><figcaption  class = "titulos">The Imitation Game</figcaption></figure></a></div>
-         <div  class = "contenido"> <a href=""><figure><img src="resources/fotos/poster1.jpg" class = "imagen" alt="Poster Pelicula" ><figcaption  class = "titulos">The Imitation Game</figcaption></figure></a></div>
-         <div  class = "contenido"> <a href=""><figure><img src=resources/fotos/poster1.jpg" class = "imagen" alt="Poster Pelicula" ><figcaption  class = "titulos">The Imitation Game</figcaption></figure></a></div>
-         <div  class = "contenido"> <a href=""><figure><img src="resources/fotos/poster1.jpg" class = "imagen" alt="Poster Pelicula" ><figcaption  class = "titulos">The Imitation Game</figcaption></figure></a></div>
-         <div  class = "contenido"> <a href=""><figure><img src="resources/fotos/poster1.jpg" class = "imagen" alt="Poster Pelicula" ><figcaption  class = "titulos">The Imitation Game</figcaption></figure></a></div>
-         <div  class = "contenido"> <a href=""><figure><img src="resources/fotos/poster1.jpg" class = "imagen" alt="Poster Pelicula" ><figcaption  class = "titulos">The Imitation Game</figcaption></figure></a></div>
-         <div  class = "contenido"> <a href=""><figure><img src="resources/fotos/poster1.jpg" class = "imagen" alt="Poster Pelicula" ><figcaption  class = "titulos">The Imitation Game</figcaption></figure></a></div>
-    
+    <div class="scroll-container" id = "scroll">
+        
         </div>
     <div class = "BarraFondo fondoLetras"><div id="clock">
         <label id="date-time"></label>

@@ -16,8 +16,9 @@
 
     <!-- <script type = "text/javaScript" src = "../../back-end/reloj.js"></script> -->
     <script type = "text/javaScript" src="resources/js/reloj.js"></script>
+    <script type = "text/javaScript" src = "resources/js/funcionesLanding.js"></script>
 </head>
-<body class = "body">
+<body class = "body" onload = "cargaLandingAdmin()">
     <nav class="navbar navbar-expand-lg navbar-dark navbarTodos fixed-top">
        
         <div class="container-fluid">
@@ -60,7 +61,7 @@
     </nav>
     
     <div class = "topN">
-    <label for="" class = "textoColor">Top Peliculas más Populares</label> <input type="number" id="numero" name="numer" class = "top" placeholder="N"><button class= "boton bTop">Buscar</button>
+    <label for="" class = "textoColor">Top Productos más Populares</label> <input type="number" id="numero" name="numer" class = "top" placeholder="N"><button class= "boton bTop">Buscar</button>
     </div>
 
     <div class = "filtro">
@@ -75,19 +76,8 @@
             </ul>
           </div>
     </div>
-    <div class="scroll-container">
-         <div  class = "contenido"> <a href="productoAdmin"><figure><img src="resources/fotos/poster1.jpg" class = "imagen" alt="Poster Pelicula" ><figcaption  class = "titulos">The Imitation Game</figcaption></figure></a></div>
-         <div  class = "contenido"> <a href=""><figure><img src="resources/fotos/poster1.jpg" class = "imagen" alt="Poster Pelicula" ><figcaption  class = "titulos">The Imitation Game</figcaption></figure></a></div>
-         <div  class = "contenido"> <a href=""><figure><img src="resources/fotos/poster1.jpg" class = "imagen" alt="Poster Pelicula" ><figcaption  class = "titulos">The Imitation Game</figcaption></figure></a></div>
-         <div  class = "contenido"> <a href=""><figure><img src="resources/fotos/poster1.jpg" class = "imagen" alt="Poster Pelicula" ><figcaption  class = "titulos">The Imitation Game</figcaption></figure></a></div>
-         <div  class = "contenido"> <a href=""><figure><img src="resources/fotos/poster1.jpg" class = "imagen" alt="Poster Pelicula" ><figcaption  class = "titulos">The Imitation Game</figcaption></figure></a></div>
-         <div  class = "contenido"> <a href=""><figure><img src="resources/fotos/poster1.jpg" class = "imagen" alt="Poster Pelicula" ><figcaption  class = "titulos">The Imitation Game</figcaption></figure></a></div>
-         <div  class = "contenido"> <a href=""><figure><img src="resources/fotos/poster1.jpg" class = "imagen" alt="Poster Pelicula" ><figcaption  class = "titulos">The Imitation Game</figcaption></figure></a></div>
-         <div  class = "contenido"> <a href=""><figure><img src="resources/fotos/poster1.jpg" class = "imagen" alt="Poster Pelicula" ><figcaption  class = "titulos">The Imitation Game</figcaption></figure></a></div>
-         <div  class = "contenido"> <a href=""><figure><img src="resources/fotos/poster1.jpg" class = "imagen" alt="Poster Pelicula" ><figcaption  class = "titulos">The Imitation Game</figcaption></figure></a></div>
-         <div  class = "contenido"> <a href=""><figure><img src="resources/fotos/poster1.jpg" class = "imagen" alt="Poster Pelicula" ><figcaption  class = "titulos">The Imitation Game</figcaption></figure></a></div>
-         <div  class = "contenido"> <a href=""><figure><img src="resources/fotos/poster1.jpg" class = "imagen" alt="Poster Pelicula" ><figcaption  class = "titulos">The Imitation Game</figcaption></figure></a></div>
-    
+    <div class="scroll-container" id = "scroll">
+        
         </div>
     <div class = "BarraFondo fondoLetras"><div id="clock">
         <label id="date-time"></label>

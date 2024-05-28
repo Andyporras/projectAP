@@ -15,43 +15,39 @@
 
     <!-- <script type = "text/javaScript" src = "../back-end/reloj.js"></script> -->
     <script type = "text/javaScript" src="resources/js/reloj.js"></script>
+    <script type = "text/javaScript" src = "resources/js/funcionesLanding.js"></script>
 </head>
-<body class = "body">
-    <nav class="navbar navbar-expand-lg navbar-dark navbarTodos fixed-top">
+<body class = "body" onload="cargaLanding()">
+  <nav class="navbar navbar-expand-lg navbar-dark navbarTodos fixed-top">
        
-        <div class="container-fluid">
-        <a class="navbar-brand" href="/"><img src="resources/fotos/LOGO.png" class = "logo" alt="Logo" ></a>
-        <form class="d-flex" role="search">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn  botonarriba" type="submit">Buscar</button>
-          </form>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-        </button>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
-                
-                <div class="navbar-nav">
-                    <a class="nav-link" aria-current="page" href="seriesNoReg">Series</a>
-                    <a class="nav-link" href="pelisNoReg" >Peliculas</a>
-                    <a class="nav-link" href="docusNoReg">Documentales</a>
-                        <div class="dropdown" style="float:right;">
-                            <button class="dropbtn  drop" > <label for="" class = "icono">☰</label></button>
-                            <div class="dropdown-content">
-                              <% if (login) { %>                
-                                <h1>Usuario conectado: <strong><%= name %></strong></h1>                        
-                                <a href="logout" class="a-logout">Logout</a>
-                            <%} else { %>
-                                <!-- <h1><strong><%= name %></strong></h1>    -->
-                                <h1><strong>Usuario no conectado</strong></h1>
-                                <a href="login" class="a-login">Ir a Login</a>
-                            <% } %>
-                            </div>
-                          </div>
-                </div>
-            </div>
+    <div class="container-fluid">
+    <a class="navbar-brand" href="/"><img src="resources/fotos/LOGO.png" class = "logo" alt="Logo" ></a>
+    <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn  botonarriba" type="submit">Buscar</button>
+      </form>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
             
+            <div class="navbar-nav">
+                <a class="nav-link" aria-current="page" href="seriesNoReg">Series</a>
+                <a class="nav-link" href="pelisNoReg" >Peliculas</a>
+                <a class="nav-link" href="docusNoReg">Documentales</a>
+                    <div class="dropdown" style="float:right;">
+                        <button class="dropbtn  drop" > <label for="" class = "icono">☰</label></button>
+                        <div class="dropdown-content">
+                          <a href="logIn">Iniciar Sesion</a>
+                          <a href="/">Salir</a>
+                        
+                        </div>
+                      </div>
+            </div>
         </div>
-    </nav>
+        
+    </div>
+</nav>
     
     <div class = "topN">
     <label for="" class = "textoColor">Top Peliculas más Populares</label> <input type="number" id="numero" name="numer" class = "top" placeholder="N"><button class= "boton bTop">Buscar</button>
@@ -69,18 +65,8 @@
             </ul>
           </div>
     </div>
-    <div class="scroll-container">
-         <div  class = "contenido"> <a href="productoNoReg"><figure><img src="resources/fotos/poster1.jpg" class = "imagen" alt="Poster Pelicula" ><figcaption  class = "titulos">The Imitation Game</figcaption></figure></a></div>
-         <div  class = "contenido"> <a href=""><figure><img src="resources/fotos/poster1.jpg" class = "imagen" alt="Poster Pelicula" ><figcaption  class = "titulos">The Imitation Game</figcaption></figure></a></div>
-         <div  class = "contenido"> <a href=""><figure><img src="resources/fotos/poster1.jpg" class = "imagen" alt="Poster Pelicula" ><figcaption  class = "titulos">The Imitation Game</figcaption></figure></a></div>
-         <div  class = "contenido"> <a href=""><figure><img src="resources/fotos/poster1.jpg" class = "imagen" alt="Poster Pelicula" ><figcaption  class = "titulos">The Imitation Game</figcaption></figure></a></div>
-         <div  class = "contenido"> <a href=""><figure><img src="resources/fotos/poster1.jpg" class = "imagen" alt="Poster Pelicula" ><figcaption  class = "titulos">The Imitation Game</figcaption></figure></a></div>
-         <div  class = "contenido"> <a href=""><figure><img src="resources/fotos/poster1.jpg" class = "imagen" alt="Poster Pelicula" ><figcaption  class = "titulos">The Imitation Game</figcaption></figure></a></div>
-         <div  class = "contenido"> <a href=""><figure><img src="resources/fotos/poster1.jpg" class = "imagen" alt="Poster Pelicula" ><figcaption  class = "titulos">The Imitation Game</figcaption></figure></a></div>
-         <div  class = "contenido"> <a href=""><figure><img src="resources/fotos/poster1.jpg" class = "imagen" alt="Poster Pelicula" ><figcaption  class = "titulos">The Imitation Game</figcaption></figure></a></div>
-         <div  class = "contenido"> <a href=""><figure><img src="resources/fotos/poster1.jpg" class = "imagen" alt="Poster Pelicula" ><figcaption  class = "titulos">The Imitation Game</figcaption></figure></a></div>
-         <div  class = "contenido"> <a href=""><figure><img src="resources/fotos/poster1.jpg" class = "imagen" alt="Poster Pelicula" ><figcaption  class = "titulos">The Imitation Game</figcaption></figure></a></div>
-         <div  class = "contenido"> <a href=""><figure><img src="resources/fotos/poster1.jpg" class = "imagen" alt="Poster Pelicula" ><figcaption  class = "titulos">The Imitation Game</figcaption></figure></a></div>
+    <div class="scroll-container" id = "scroll">
+        
     
         </div>
     <div class = "BarraFondo fondoLetras"><div id="clock">

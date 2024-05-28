@@ -18,9 +18,9 @@
     <!-- <script type = "text/javaScript" src = "../../back-end/main.js"></script> -->
     <script type = "text/javaScript" src="resources/js/reloj.js"></script>
     <script type = "text/javaScript" src="resources/js/main.js"></script>
-   
+    <script type = "text/javaScript" src="resources/js/perfil.js"></script>
 </head>
-<body class = "body">
+<body class = "body" onload = "cargaDatos()">
     <nav class="navbar navbar-expand-lg navbar-dark navbarTodos fixed-top">
        
         <div class="container-fluid">
@@ -42,7 +42,7 @@
                             <button class="dropbtn  drop" > <label for="" class = "icono">☰</label></button>
                             <div class="dropdown-content">
                               <a href="">Perfil</a>
-                              <a href="wishlist">Wishlist</a>
+                              <a href="wishlist">Favoritos</a>
                               <a href="historial">Historial</a>
                               <a href="carrito">Carrito</a>
                               <a href="/">Cerrar Sesión</a>
@@ -59,53 +59,53 @@
     
           <div class="cont contenedor">
 
-            <label for=""class="textos titulo">Perfil</label>
+            <label for=""class="textos titulo" >Perfil</label>
            <div>
             <label for="" class="textos perfil">Nombre:</label>
-            <label for="" class ="textos perfil">Franco</label>
+            <label for="" class ="textos perfil" id = "nombre"></label>
            </div>
            <div>
             <label for="" class="textos perfil">Segundo Nombre:</label>
-            <label for="" class ="textos perfil">Alejandro</label>
+            <label for="" class ="textos perfil" id = "segNombre"></label>
            </div>
            <div>
             <label for="" class="textos perfil">Apellido:</label>
-            <label for="" class ="textos perfil">Martinez</label>
+            <label for="" class ="textos perfil" id = "apellido"></label>
            </div>
            <div>
             <label for="" class="textos perfil">Segundo Apellido:</label>
-            <label for="" class ="textos perfil">Rojas</label>
+            <label for="" class ="textos perfil" id = "segApellido"></label>
            </div>
            <div>
             <label for="" class="textos perfil">Identificacion:</label>
-            <label for="" class ="textos perfil">118230912</label>
+            <label for="" class ="textos perfil" id = "id"></label>
            </div>
            <div>
             <label for="" class="textos perfil">Correo Electronico:</label>
-            <label for="" class ="textos perfil">fRojas18@gmail.com</label>
+            <label for="" class ="textos perfil" id = "correo"></label>
            </div>
            <div>
             <label for="" class="textos perfil">Número de Teléfono:</label>
-            <label for="" class ="textos perfil">25252525</label>
+            <label for="" class ="textos perfil"id = "num"></label>
            </div>
            <div>
             <label for="" class="textos perfil">Usuario:</label>
-            <label for="" class ="textos perfil">franMar</label>
+            <label for="" class ="textos perfil" id = "usr"></label>
            </div>
            <div>
             <label for="" class="textos perfil">Fecha de Nacimiento:</label>
-            <label for="" class ="textos perfil">12/11/1999</label>
+            <label for="" class ="textos perfil"id = "nac"></label>
            </div>
            <div>
             <label for="" class="textos perfil">Género:</label>
-            <label for="" class ="textos perfil">Masculino</label>
+            <label for="" class ="textos perfil"id = "gen"></label>
            </div>
            <div>
             <label for="" class="textos perfil">Nacionalidad:</label>
-            <label for="" class ="textos perfil">Americano</label>
+            <label for="" class ="textos perfil"id = "nacion"></label>
            </div>
            <div>
-            <button class = "boton botonesDerecha" >Volver</button>
+            <button class = "boton botonesDerecha" onclick="history.back()">Volver</button>
             <button class = "boton botonesDerecha" onclick="editarPerfil()">Editar</button>
            
            </div>

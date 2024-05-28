@@ -3,6 +3,9 @@ const router = express.Router();
 const bcryptjs = require('bcryptjs');
 const conexion = require('./conexion'); // Asegúrate de que la ruta es correcta
 
+function temp(){
+    location.href = "landingRegistrado"
+}
 
 //tabla se llama UserIMDB y las columnas son username, pass
 app.post('/auth', async (req, res) => {

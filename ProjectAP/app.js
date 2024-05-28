@@ -113,6 +113,9 @@ app.use('/', productoAdminRoutes);
 const productoRegRoutes = require('./back-end/productoReg');
 app.use('/', productoRegRoutes);
 
+const productosRoutes = require('./back-end/productos');
+app.use('/', productosRoutes);
+
 const productoRoutes = require('./back-end/producto');
 app.use('/', productoRoutes);
 

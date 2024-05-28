@@ -16,8 +16,9 @@
 
     <script type = "text/javaScript" src = "resources/js/reloj.js"></script>
      <script type = "text/javaScript" src = "resources/js/main.js"></script>
+     <script type = "text/javaScript" src = "resources/js/perfil.js"></script>
 </head>
-<body class = "body">
+<body class = "body" onload = "cargaPlaceholders()">
     <nav class="navbar navbar-expand-lg navbar-dark navbarTodos fixed-top">
        
         <div class="container-fluid">
@@ -39,7 +40,7 @@
                             <button class="dropbtn  drop" > <label for="" class = "icono">☰</label></button>
                             <div class="dropdown-content">
                               <a href="perfil">Perfil</a>
-                              <a href="wishlist">Wishlist</a>
+                              <a href="wishlist">Favoritos</a>
                               <a href="historial">Historial</a>
                               <a href="carrito">Carrito</a>
                               <a href="/">Cerrar Sesión</a>
@@ -59,7 +60,7 @@
             </div>
             <div class="form-group">
                 <label for="nombre" class = "textos">Segundo Nombre:</label>
-                <input type="text" id="nombre" name="nombre" placeholder="Alejandro">
+                <input type="text" id="segNom" name="nombre" placeholder="Alejandro">
             </div>
             <div class="form-group">
                 <label for="apellido" class = "textos">Apellido:</label>
@@ -67,11 +68,11 @@
             </div>
             <div class="form-group">
                 <label for="apellido" class = "textos">Segundo Apellido:</label>
-                <input type="text" id="apellido" name="apellido" placeholder="Rojas">
+                <input type="text" id="segAp" name="apellido" placeholder="Rojas">
             </div>
             <div class="form-group">
                 <label for="cedula" class = "textos">Cédula:</label>
-                <input type="text" id="cedula" name="cedula" placeholder="118230912">
+                <input type="text" id="id" name="cedula" placeholder="118230912">
             </div>
             <div class="form-group">
                 <label for="correo" class = "textos">Correo electrónico:</label>
@@ -79,15 +80,15 @@
             </div>
             <div class="form-group">
                 <label for="telefono" class = "textos">Número de teléfono:</label>
-                <input type="tel" id="telefono" name="telefono" placeholder="25252525">
+                <input type="tel" id="num" name="telefono" placeholder="25252525">
             </div>
             <div class="form-group">
                 <label for="usuario" class = "textos">Nombre de usuario:</label>
-                <input type="text" id="usuario" name="usuario" placeholder="franMar" disabled>
+                <input type="text" id="usr" name="usuario" placeholder="franMar" disabled>
             </div>
             <div class="form-group">
                 <label for="contraseña" class = "textos">Contraseña:</label>
-                <input type="password" id="contraseña" name="contraseña" placeholder="Contraseña">
+                <input type="password" id="contra" name="contraseña" placeholder="Contraseña">
             </div>
             <div class="form-group">
                 <label for="confirmar_contraseña" class = "textos">Confirmar contraseña:</label>
@@ -95,7 +96,7 @@
             </div>
             <div class="form-group">
                 <label for="fecha_nacimiento" class = "textos">Fecha de nacimiento:</label>
-                <input type="date" id="fecha_nacimiento" name="12/11/1999">
+                <input type="date" id="nac" name="12/11/1999">
             </div>
             <div class="form-group">
                 <label for="genero" class = "textos">Género:</label>
@@ -112,8 +113,7 @@
             </div>
             <div class="form-group">
                 <label for="nationality" class = "textos">Nacionalidad:</label>
-                <input type="text" id = "national
-                ity" name="national
+                <input type="text" id = "nacion" name="national
                 ity" placeholder="Americano">
             </div>
   

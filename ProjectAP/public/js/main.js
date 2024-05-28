@@ -2,22 +2,22 @@
 
 function pagar(){
     
-    location.href = "../../fron-end/archivosHTML/pago.html"
+    location.href = "pago"
 }
 
 function volverPagar(){
-    location.href = "../../fron-end/archivosHTML/carrito.html"
+    location.href = "carrito"
 }
 
 function volverPerfil(){
-    console.log("entra")
     
-    location.href = "../../fron-end/archivosHTML/perfil.html"
+    
+    history.back();
 }
 
 
 function editarPerfil(){
-    location.href = "../../fron-end/archivosHTML/editarPerfil.html"
+    location.href = "editarPerfil"
 }
 
 function estrella(valor){
@@ -25,9 +25,9 @@ function estrella(valor){
 }
 
 function editarProducto(){
-    location.href = "../../fron-end/archivosHTML/modificarProducto.html"
+    location.href = "modificarProducto"
 }
 
 function editarCreativo(){
-    location.href = "../../fron-end/archivosHTML/editarCreativo.html"
+    location.href = "editarCreativo"
 }

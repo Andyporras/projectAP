@@ -5,7 +5,7 @@ const conexion = require('./conexion'); // Asegúrate de que la ruta es correcta
 const { post } = require('./login');
 
 // funciones de editarPefil
-router.get('/editarPefil', (req, res) => {
+router.get('/editarPerfil', (req, res) => {
     if (req.session.loggedin) {
         res.render('editarPefil', {
             login: true,
@@ -13,7 +13,7 @@ router.get('/editarPefil', (req, res) => {
         });
     }
     else {
-        res.render('editarPefil', {
+        res.render('editarPerfil', {
             login: false,
             name: 'Sesión no iniciada',
         });

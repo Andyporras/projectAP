@@ -26,7 +26,7 @@
     <script type = "text/javaScript" src="resources/js/main.js"></script>
     <script type = "text/javaScript" src = "resources/js/productoAuto.js"></script>
 </head>
-<body class = "body" onload = "cargaInfoProducto()">
+<body class = "body" onload = "cargaInfoProductoReg()">
     <nav class="navbar navbar-expand-lg navbar-dark navbarTodos fixed-top">
        
         <div class="container-fluid">
@@ -79,19 +79,13 @@
                             <label for="" class = "textos">Trailer:</label>
                             <a for="" href = "https://www.youtube.com/watch?v=yyGetSp7CIc" id = "trailer">https://www.youtube.com/watch?v=yyGetSp7CIc</a>
                         </div>
-                        <div class = "trailer">
-                            <label for="" class = "textosCat categorias terror">Terror</label>
-                            <label for="" class = "textosCat categorias drama">Drama</label>
-                            <label for="" class = "textosCat categorias temporadas">1T 9EP</label>
-                            <label for="" class = "textosCat categorias año">2023</label>
+                        <div class = "trailer" id = "categorias">
+                          
                         </div>
                         
-                        <div class = "trailer">
+                        <div class = "trailer" id = "rating">
                         <label for="" class = "textos rating">Rating: </label><span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star unchecked"></span>  
+                      
                     </div>
                     
 
@@ -101,17 +95,16 @@
                         <button class="btn btn-secondary dropdown-toggle  filtroBtn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                           Temporadas
                         </button>
-                        <ul class="dropdown-menu">
-                          <li><a class="dropdown-item" href="#">Temporada 1</a></li>
+                        <ul class="dropdown-menu" id = "temporadas">
+                       
                         
                           
                         </ul>
                         <button class="btn btn-secondary dropdown-toggle  filtroBtn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Episodios
                           </button>
-                          <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Episodio 1</a></li>
-                            <li><a class="dropdown-item" href="#">Episodio 2</a></li>
+                          <ul class="dropdown-menu" id = "capitulos">
+                           
                             
                           </ul>
                       </div>
@@ -134,36 +127,30 @@
     </div>
     <div class="cont contenedor">
         <div class = "textos titulo">Direccion</div>
-        <div >
-            <div  class = "contenido"> <a href=""><figure><img src="resources/fotos/perfil.jpg" class = "imagenPerfil" alt="Poster Pelicula" ><figcaption  class = "titulos">Director: Craig Mazin</figcaption></figure></a></div>
-            <div  class = "contenido"> <a href=""><figure><img src="resources/fotos/perfil.jpg" class = "imagenPerfil" alt="Poster Pelicula" ><figcaption  class = "titulos">Sub Director: Neil Druckmann</figcaption></figure></a></div>
-        </div>
+        <div id = "direccion">
+          </div>
         
     </div>
     <div class="cont contenedor">
     
         <div class = "textos titulo">Reparto</div>
-        <div >
-            <div  class = "contenido"> <a href="infoCreativoReg"><figure><img src="resources/fotos/pascal.jpg" class = "imagenPerfil" alt="Poster Pelicula" ><figcaption  class = "titulos">Pedro Pascal</figcaption></figure></a></div>
-            <div  class = "contenido"> <a href=""><figure><img src="resources/fotos/perfil.jpg" class = "imagenPerfil" alt="Poster Pelicula" ><figcaption  class = "titulos">Bella Ramsey</figcaption></figure></a></div>
-        </div>
+        <div id = "reparto">
+           </div>
     </div>
     <div class="cont contenedor">
         <div class = "textos titulo">Escenas</div>
        
-        <div >
-            <div  class = "contenido"> <figure><img src="resources/fotos/last-of-us-2.jpg" class = "imagenPerfil" alt="Poster Pelicula" ><figcaption  class = "titulos"></figcaption></figure></div>
-            <div  class = "contenido"> <figure><img src="resources/fotos/last-of-us-1.jpg" class = "imagenPerfil" alt="Poster Pelicula" ><figcaption  class = "titulos"></figcaption></figure></div>
-        </div>
+        <div id= "escenas">
+         </div>
     </div>
-    <div class="cont contenedor">
+    <div class="cont contenedor" id = "plataformas">
         <div class = "textos titulo">Plataformas:</div>
-        <label for="" class = "textos categorias HBOMax">HBOMax</label>
+        
     
     </div>
     <div class="cont contenedor">
         <div class = "textos titulo">Comentarios:</div>
-        <div class="contenedorScroll2">
+        <div class="contenedorScroll2" id = "comentarios">
            
            
            
@@ -191,62 +178,7 @@
                 
             </div>
            
-            <div class="cont contComentarios">
-                
-                <div class = "textos titulo usr">Usuario 1 - 1/5/2024</div>
-                    
-              
-                <div>
-                    <label for="" class = "textos">
-                        Es una serie fascinante.
-                    </label>
-                    <div>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star unchecked"></span>  
-                    </div>
-                    
-                </div>
-            </div>
-
-            <div class="cont contComentarios">
-                
-                <div class = "textos titulo usr">Usuario 1 - 1/5/2024</div>
-                    
-              
-                <div>
-                    <label for="" class = "textos">
-                        Es una serie fascinante.
-                    </label>
-                    <div>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star unchecked"></span>  
-                    </div>
-                    
-                </div>
-            </div> 
-
-            <div class="cont contComentarios">
-                
-                <div class = "textos titulo usr">Usuario 1 - 1/5/2024</div>
-                    
-              
-                <div>
-                    <label for="" class = "textos">
-                        Es una serie fascinante.
-                    </label>
-                    <div>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star unchecked"></span>  
-                    </div>
-                    
-                </div>
-            </div>
+          
             
             </div>
 

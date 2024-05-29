@@ -136,10 +136,16 @@
                 <!-- <input type="text" id="direccion" name="direccion" placeholder="Cédula"> -->
             </div>
             <div class="Direccion">
+            <!-- se saca los productos de la base de datos -->
                 <select id="producto" name="producto">
-                    <option value="">Selecciona un producto</option>
-                    <option value="titani">Titani</option>
-                    
+                    <!-- se valida que productos este definido -->
+                    <% if (typeof productos != "undefined")  { %>
+                        <!-- se recorre el arreglo de productos -->
+                        <% productos.forEach(producto => { %>
+                            <option value="<%= producto %>"><%= producto %></option>
+                        <% }) %>
+                    <% } %>
+                
                 </select>
                 <input type="text" id="rol" name="rol" placeholder="Rol" required>
             </div>

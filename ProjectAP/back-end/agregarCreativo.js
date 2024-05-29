@@ -23,21 +23,42 @@ router.post('/agregarTrabajo', (req, res) => {
 });
 
 // Ruta para mostrar el formulario de agregar creativo
-router.get('/agregarCreativo', (req, res) => {
+router.get('/agregarCreativo', async (req, res) => {
     nombresParentesco = [];
     listaParentesco = [];
     trabajos = [];
     roles = [];
-    if (req.session.loggedin) {
-        res.render('agregarCreativo', {
-            login: true,
-            name: req.session.name,
+
+    try {
+        const results = await new Promise((resolve, reject) => {
+            conexion.query('SELECT * FROM productav', (error, results) => {
+                if (error) {
+                    return reject(error);
+                }
+                resolve(results);
+            });
         });
-    } else {
-        res.render('agregarCreativo', {
-            login: false,
-            name: 'Sesión no iniciada',
-        });
+
+        const listaProductos = results.map(result => result.title);
+
+        console.log("Lista de productos: ", listaProductos);
+
+        if (req.session.loggedin) {
+            res.render('agregarCreativo', {
+                login: true,
+                name: req.session.name,
+                productos: listaProductos
+            });
+        } else {
+            res.render('agregarCreativo', {
+                login: false,
+                name: 'Sesión no iniciada',
+                productos: listaProductos
+            });
+        }
+    } catch (error) {
+        console.error(error);
+        res.status(500).send('Error al obtener la lista de productos');
     }
 });
 
@@ -108,7 +129,7 @@ router.post('/agregarCreativo', async (req, res) => {
         const idProductV2 =idProductV;
         console.log("idproducto: "+idProductV.length, idProductV);
         console.log("idProductoV2: "+idProductV2.length, idProductV2);
-        for (const index = 0; index < idProductV.length; index++) {
+        for (var index = 0; index < idProductV.length; index++) {
             console.log("index: "+index);
             // await query('CALL addRol(?,?,?)', [idProduct, idStaffV, rol[index]]);
             // INSERT INTO ProductxStaff(idProduct, idStaff) Values (idProductV, idStaffV);

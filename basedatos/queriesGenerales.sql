@@ -406,7 +406,7 @@ CREATE PROCEDURE addRelative(IN nameVar VARCHAR(255))
 -- lo relaciona con algun staff y le define la relacion
 CREATE PROCEDURE addRelativexStaff(IN idStaffV INT, IN idRelativeV INT, in relationVar VARCHAR(255))
    BEGIN
-     INSERT INTO RelativexStaff(idStaff, idRelativexStaff, relation)
+     INSERT INTO RelativexStaff(idStaff, idRelative, relation)
      VALUES (idStaffV, idRelativeV, relationVar);
    END//
 
@@ -437,27 +437,38 @@ CREATE PROCEDURE deleteRelativexStaff (IN idStaffV INT, in idRelaVar INT)
      DELETE FROM Relative
      WHERE idRelative = idRelaVar;
 END//
+Use imdb2024;
 -- staffType:
 -- 	rol del staff(actor, director, etc)
 CREATE PROCEDURE addStaffType(IN nameVar VARCHAR(255))
    BEGIN
-	 INSERT INTO staffType(staffType_name)
+	 INSERT INTO staffType(staffT_name)
      Values (nameVar);
    END//
-
+insert into staffType(staffT_name) values("prueba");
+select *from staffType;
+select *from staff;
+select *from relative;
+SELECT idRelative FROM Relative WHERE relative_name = 'andrey';
+SELECT * FROM RelativexStaff WHERE idStaff = 2 AND idRelative = 2;
+SELECT idRelative FROM Relative WHERE relative_name ="andrey";
+SELECT idStaff FROM Staff WHERE staff_name = "andy";
+SELECT * FROM StaffType WHERE staffT_name = 'actor';
+CALL addRelativexStaff(2,2,'tio');
 CREATE PROCEDURE updateStaffTypeName (IN idVar INT, IN nameV VARCHAR(255))
    BEGIN
 	 UPDATE staffType
      SET staffType_name = nameVar
      WHERE staffType.id = idVar;
 END//    
-   
+call deleteStaff(10);
 CREATE PROCEDURE deleteStaffType(IN idVar INT)
    BEGIN
 	 DELETE FROM staffType
      WHERE staffType.id = idVar;
 END//
-
+select *from productav;
+SELECT idProduct FROM productav WHERE product_name = ;
 -- 	crud
 -- asigan el rol es ya que se da primero la relacion y luego se le asigna el rol por eso se hace ese call(relaciona 
 -- el id del rol que puede tener algun staff con la relacion de el media)

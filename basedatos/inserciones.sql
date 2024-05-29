@@ -7,6 +7,9 @@ SELECT * FROM UserIMDB;
 select *from gender;
 select *from person;
 select *from userIMDB;
+SELECT idPerson FROM UserIMDB WHERE username = 'andycr';
+SELECT * FROM Administrator WHERE idUser = 3;
+SELECT * FROM administrator WHERE idPerson = last_insert_id();
 select *from distrit;
 select *from creativo;
 
@@ -86,7 +89,9 @@ CREATE PROCEDURE addStaff(IN nameV VARCHAR(255), birthV DATE, IN natV VARCHAR(22
 
 CALL addStaff('staff1', '1999-01-01', 'costarricense', 'bio1', '1.80', 'dato1', 'foto1', 'lugar1');
 
-
+select *from staff;
+-- tabla con relacion NxN con staff ya que un staff tien N allegados y algun allegado tiene N personas del staff
+-- añade al algun allegado
 CREATE PROCEDURE addRelative(IN nameVar VARCHAR(255))
    BEGIN
 	 INSERT INTO Relative(relative_name)
@@ -104,8 +109,38 @@ CREATE PROCEDURE addRelativexStaff(IN idStaffV INT, IN idRelativeV INT, in relat
 
 CALL addRelativexStaff(1, 1, 'hermano');
 
--- sacar el id de la persona que se acaba de logear con el username y la contraseña
--- y verificar si el id de la persona esta en la tabla administrator
-SELECT idPerson FROM UserIMDB WHERE username = 'user1' AND pass = '1234';
-SELECT * FROM Administrator WHERE idPerson = idPerson;
+-- staffType:
+-- 	rol del staff(actor, director, etc)
+CREATE PROCEDURE addStaffType(IN nameVar VARCHAR(255))
+   BEGIN
+	 INSERT INTO staffType(staffType_name)
+     Values (nameVar);
+   END//
+
+
+CREATE PROCEDURE addRol(IN idProductV INT, IN idStaffV INT, IN idStaffTV INT)
+   BEGIN
+	 INSERT INTO ProductxStaff(idProduct, idStaff)
+     Values (idProductV, idStaffV);
+     call addProductxStaffxType(last_insert_id(), idStaffTV);
+   END//
+   
+   
+-- 	crud
+-- añade media en general titulo link(no se a que se refiere pero ahi esta) estreno, duracion, photo, sinopsis, trailer precio tipo(un id que hace referencia a serie, pelicula documental, etc)
+-- el reparto, categoria plataformas se hace por aparte ya que como antes son iteraciones de una lista 
+-- los updates de las tablas que tengan datos asi (iterativos, como reparto, categorias) hay dos opciones 1. mas sencilla para la base borra la lista de lo que se va a actualizar y se vuelven a añadir los 
+-- "nuevos"(me refiero a que si antes habian 3 categorias(terror, drama, comedia) y se quieren cambiar se eliminan las tres y se añaden de nuevo(supenso, drama)
+CREATE PROCEDURE addProduct (IN titleV varchar(255), IN linkV varchar(255), IN releaseV DATE,
+							IN durationV time, IN photoV VARCHAR(255), IN synopsisV VARCHAR(255),
+                            IN trailerV VARCHAR(255), IN priceV DOUBLE, in tipo int)
+   BEGIN
+	 INSERT INTO ProductAV(title, link, releaseDate, duration, photo, synopsis, trailer, price, review, idMediaType, activo)
+     Values (titleV, linkV, releaseV, durationV, photoV, synopsisV, trailerV, priceV, 0.0, tipo, 1);
+   END//
+
+CALL addProduct('titani', 'link1', '1999-01-01', '1:30:10', 'foto1', 'sinopsis1', 'trailer1', 1000.0, 1);
+
+
+
 

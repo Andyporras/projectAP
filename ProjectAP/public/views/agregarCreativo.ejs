@@ -65,8 +65,8 @@
                 <input type="text" id="nombre" name="nombre" placeholder="Nombre" required>
             </div>
             <div class="form-group">
-                <label for="nombre" class = "textos">Segundo Nombre:</label>
-                <input type="text" id="nombre" name="nombre" placeholder="Segundo Nombre" required>
+                <label for="segundoNombre" class = "textos">Segundo Nombre:</label>
+                <input type="text" id="segundoNombre" name="segundoNombre" placeholder="Segundo Nombre" required>
             </div>
             <div class="form-group">
                 <label for="apellido" class = "textos">Apellido:</label>
@@ -92,20 +92,7 @@
                 <label for="biografia" class = "textos">Biografia:</label>
                 <input type="text" id="Biografia" name="biografia" placeholder="biografia" required>
             </div>
-            <div class="form-group">
-                <label for="allegado" class = "textos">Allegado:</label>
-                <button class = "boton">Agregar</button>
-            
-                <div class="Direccion">
-                    <label for="nombre2" class = "textos">Nombre</label>
-                    <label for="parentesco" class = "textos">Parentesco</label>
-                    <!-- <input type="text" id="direccion" name="direccion" placeholder="Cédula"> -->
-                </div>
-                <div class="Direccion">
-                    <input type="text" id="nombre2" name="nombre2" placeholder="Nombre2" required>
-                    <input type="text" id="parentesco" name="parentesco" placeholder="Parentesco" required>
-                </div>
-            </div>
+           
             <div class="form-group">
                 <label for="altura" class = "textos">Altura:</label>
                 <input type="tel" id="altura" name="altura" placeholder="Altura" required>
@@ -113,24 +100,6 @@
             <div class="form-group">
                 <label for="datosTrivia" class = "textos">Datos Trivia:</label>
                 <input type="text" id="datosTrivia" name="datosTrivia" placeholder="datosTrivia" required>
-            </div>
-            <div class="form-group">
-                <label for="Trabajos" class = "textos">Trabajos:</label>
-                <button class = "boton">Agregar</button>
-                <div class="Direccion">
-                    <label for="producto" class = "textos">Producto</label>
-                    <label for="parentesco" class = "textos">Rol</label>
-                    <!-- <input type="text" id="direccion" name="direccion" placeholder="Cédula"> -->
-                </div>
-                <div class="Direccion">
-                    <select id="producto" name="producto">
-                        <option value="">Selecciona un producto</option>
-                        <option value="Pelicula">Pelicula</option>
-                        
-                    </select>
-                    <input type="text" id="rol" name="rol" placeholder="Rol" required>
-                </div>
-               
             </div>
            
             <div class="form-group">
@@ -143,6 +112,53 @@
             <input type="submit" class="btn-creativo" value="agregarCreativo">
             <!-- <button type="submit" class = "boton">Guardar</button> -->
         </form>
+
+        <form action="agregarFamiliar" method="POST">
+            <label for="allegado" class = "textos">Allegado:</label>
+            <button href="agregarFamiliar" class = "boton">Agregar</button> 
+            <!-- <input type="submit" class="btn-creativo" value="agregarFamiliar"> -->
+            <div class="Direccion">
+                <label for="nombre2" class = "textos">Nombre</label>
+                <label for="parentesco" class = "textos">Parentesco</label>
+                <!-- <input type="text" id="direccion" name="direccion" placeholder="Cédula"> -->
+            </div>
+            <div class="Direccion">
+                <input type="text" id="nombreParentesco" name="nombreParentesco" placeholder="Nombre2" required>
+                <input type="text" id="parentesco" name="parentesco" placeholder="Parentesco" required>
+            </div>
+        </form>
+        <form action="agregarTrabajo" method="post">
+            <label for="Trabajos" class = "textos">Trabajos:</label>
+            <button href="agregarTrabajo" class = "boton">Agregar</button>
+            <div class="Direccion">
+                <label for="producto" class = "textos">Producto</label>
+                <label for="parentesco" class = "textos">Rol</label>
+                <!-- <input type="text" id="direccion" name="direccion" placeholder="Cédula"> -->
+            </div>
+            <div class="Direccion">
+                <select id="producto" name="producto">
+                    <option value="">Selecciona un producto</option>
+                    <option value="titani">Titani</option>
+                    
+                </select>
+                <input type="text" id="rol" name="rol" placeholder="Rol" required>
+            </div>
+        </form>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+        <% if (typeof alert != "undefined")  { %>
+         <script>
+         Swal.fire({
+           title:'<%= alertTitle %>',
+           text:'<%= alertMessage %>',
+           icon:'<%= alertIcon %>',
+           showConfirmButton: <%= showConfirmButton %>,
+           timer: <%= timer %>
+         }).then(()=>{
+           window.location='/<%= ruta %>'
+         })
+         </script>
+       <% } %>
     </div>
     
     <div class = "BarraFondo">

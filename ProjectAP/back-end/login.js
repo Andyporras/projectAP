@@ -46,6 +46,7 @@ router.post('/auth', async (req, res) => {
                     if(results2.length === 0){
                         req.session.loggedin = true;
                         req.session.name = usuario;
+                        req.session.userId = idPerson;
                         res.render('login', {
                             alert: true,
                             alertTitle: '¡Éxito!',

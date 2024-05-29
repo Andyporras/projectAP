@@ -22,7 +22,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark navbarTodos fixed-top">
        
         <div class="container-fluid">
-        <a class="navbar-brand" href="landingRegistrado"><img src="resources/fotos/LOGO.png" class = "logo" alt="Logo" ></a>
+        <!-- <a class="navbar-brand" href="landingRegistrado"><img src="resources/fotos/LOGO.png" class = "logo" alt="Logo" ></a> -->
         <form class="d-flex" role="search">
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
             <button class="btn  botonarriba" type="submit">Buscar</button>
@@ -53,7 +53,7 @@
     </nav>
     <div class="cont contenedor">
         <h2>Editar Perfil</h2>
-        <form action="#">
+        <form action="/editarPerfil" method="POST">
             <div class="form-group">
                 <label for="nombre" class = "textos">Nombre:</label>
                 <input type="text" id="nombre" name="nombre" placeholder="Franco">
@@ -118,7 +118,7 @@
             </div>
   
             <button type="button" class = " botonEditar" onclick="volverPerfil()">Volver</button>
-            <button type="button" class = " botonEditar">Guardar</button>
+            <button type="submit" class = " botonEditar">Guardar</button>
         </form>
     </div>
     

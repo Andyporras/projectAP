@@ -24,8 +24,9 @@
     <!-- <script type = "text/javaScript" src = "../../back-end/main.js"></script> -->
     <script type = "text/javaScript" src="resources/js/reloj.js"></script>
     <script type = "text/javaScript" src="resources/js/main.js"></script>
+    <script type = "text/javaScript" src = "resources/js/productoAuto.js"></script>
 </head>
-<body class = "body">
+<body class = "body" onload = "cargaInfoProducto()">
     <nav class="navbar navbar-expand-lg navbar-dark navbarTodos fixed-top">
        
         <div class="container-fluid">
@@ -59,16 +60,16 @@
         </div>
     </nav>
     <div class="cont contenedor primero">
-        <div class = "titulo textos">The Last of Us</div>
+        <div class = "titulo textos" id = "titulo">The Last of Us</div>
         <div>
 
             <div class="container">
                 <div class="row">
                   <div class="col">
-                    <img src="resources/fotos/poster2.jpg" class = "imagen" alt="Poster Pelicula" >
+                    <img src="resources/fotos/poster2.jpg" class = "imagen" alt="Poster Pelicula" id = "poster">
                   </div>
                   <div class="col">
-                    <label for="" class ="textos desc">   
+                    <label for="" class ="textos desc" id = "sinopsis">   
                         Joel, un superviviente de carácter recio, es contratado para sacar de contrabando a Ellie, una niña de 
                         14 años, fuera de una opresiva zona de cuarentena. Lo que comienza como un pequeño trabajo pronto se 
                         convierte en un viaje brutal y desgarrador, ya que ambos deben atravesar los EE. UU.
@@ -76,7 +77,7 @@
                         </label>
                         <div class = "trailer">
                             <label for="" class = "textos">Trailer:</label>
-                            <a for="" href = "https://www.youtube.com/watch?v=yyGetSp7CIc">https://www.youtube.com/watch?v=yyGetSp7CIc</a>
+                            <a for="" href = "https://www.youtube.com/watch?v=yyGetSp7CIc" id = "trailer">https://www.youtube.com/watch?v=yyGetSp7CIc</a>
                         </div>
                         <div class = "trailer">
                             <label for="" class = "textosCat categorias terror">Terror</label>
@@ -208,6 +209,7 @@
                     
                 </div>
             </div>
+
             <div class="cont contComentarios">
                 
                 <div class = "textos titulo usr">Usuario 1 - 1/5/2024</div>
@@ -226,6 +228,7 @@
                     
                 </div>
             </div> 
+
             <div class="cont contComentarios">
                 
                 <div class = "textos titulo usr">Usuario 1 - 1/5/2024</div>

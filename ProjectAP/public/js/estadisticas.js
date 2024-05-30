@@ -8,12 +8,9 @@ function cargaGraficos(){
                 
                 dataSource: [
                     
-                    { 'x': 'Chrome', y: 37, }, 
-                    { 'x': 'UC Browser', y: 17, },
-                    { 'x': 'iPhone', y: 19 },
-                    { 'x': 'Others', y: 4 }, 
-                    { 'x': 'Opera', y: 11 },
-                    { 'x': 'Android', y: 12 }
+                    { 'x': 'Hombres', y: 65, }, 
+                    { 'x': 'Mujeres', y: 30, },
+                    { 'x': 'Otro', y: 5 }
                 ],
                 dataLabel: {
                     visible: true,
@@ -40,9 +37,9 @@ function cargaGraficos(){
         var data = {
             header: ["Name", "Death toll"],
             rows: [
-              ["opcion1", 150],
-              ["opcion2", 170],
-              ["opcion3", 190]
+              ["Hombres", 65],
+              ["Mujeres", 30],
+              ["Otro", 5]
           ]}
     
 
@@ -50,7 +47,7 @@ function cargaGraficos(){
 var chart = anychart.column();
  
 // add the data
-chart.title("Titulo Diagrama")
+
 chart.data(data);
 chart.container('containers');
 chart.background("#fff0")

@@ -11,7 +11,7 @@ router.get('/estadisticas', (req, res) => {
           return res.status(500).json({ error: 'Error en la consulta' });
         }
   
-        res.render('estadisticas', {datosBi: datosBi});
+        res.render('estadisticas', {datosBi: results});
 
     });
 

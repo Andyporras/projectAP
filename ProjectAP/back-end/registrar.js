@@ -66,7 +66,6 @@ router.post('/registrar', async (req, res) => {
             //encriptar la contraseña
             let passHash = await bcryptjs.hash(contraseña, 8);
             //insertar los datos en la base de datos
-            console.log(contraseña);
             /*
             CREATE PROCEDURE addPerson (IN nameP VARCHAR(255), IN birth DATE, IN gen INT, IN mailVar VARCHAR(255),
 							IN phoneVar VARCHAR(255), IN nationalityVar VARCHAR(255), IN photoVar VARCHAR(255), in identV VARCHAR(255), IN idDistV INT)
@@ -89,7 +88,7 @@ router.post('/registrar', async (req, res) => {
                 Values (last_insert_id(), nameV, passVar, 1);
             END//
             */
-            conexion.query('CALL addUser(?,?)', [usuario, contraseña], async (error, results) => {
+            conexion.query('CALL addUser(?,?)', [usuario, passHash], async (error, results) => {
                 if (error) {
                     console.log(error);
                 }

@@ -1,5 +1,5 @@
 
-Use imdb2024;
+-- Use imdb2024;
 
 -- seleccionar la tabla de person y mostrar los datos
 SELECT * FROM UserIMDB;
@@ -24,13 +24,14 @@ INSERT INTO Province (provinceName, idCountry) VALUES ('San Jose', 1);
 
 
 -- insecion de datos en la tabla Canton
+DELIMITER //
 INSERT INTO Canton (cantonName, idDistrit) VALUES ('San Jose', 1);
 CREATE PROCEDURE addCanton (IN nameVar VARCHAR(255), in idP INT)
    BEGIN
 	 INSERT INTO Canton(cantonName, idProvince)
-     Values (nameVar, idP);
-   END//
-
+     Values (nameVar, idP)
+   END
+END//
 CALL addCanton('San Jose', 1);
 -- insecion de datos en la tabla Distrit
 INSERT INTO Distrit (distritName, idProvince) VALUES ('San Jose', 1);

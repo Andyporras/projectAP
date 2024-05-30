@@ -137,7 +137,8 @@ CREATE PROCEDURE getAdministradores() -- general
 BEGIN
 	SELECT * FROM Administrator;
 END //
-CREATE PROCEDURE getAdministradores() -- general completa
+DELIMITER //
+CREATE PROCEDURE getInfoAdministradores() -- general completa
 BEGIN
 	SELECT
 		Administrator.*,
@@ -159,7 +160,7 @@ BEGIN
         INNER JOIN Country ON Country.idCountry = Province.idCountry
     WHERE UserIMDB.activo = 1 and Person.activo = 1;
 END //
-CREATE PROCEDURE getAdministradores(IN idAdminV INT) -- general especifica
+CREATE PROCEDURE getAdministrador(IN idAdminV INT) -- general especifica
 BEGIN
 	SELECT 
 		Administrator.*,
@@ -297,7 +298,8 @@ BEGIN
 	END IF;
 
 END //
-CREATE PROCEDURE getTopNVentas(IN tipoMedia INT, in categoriaV INT)-- general solo lo que sea necesario como titulo sinopsis, fecha etc
+DELIMITER //
+CREATE PROCEDURE getTopNVentas(IN tipoMedia INT, in categoriaV INT,  IN topN INT)-- general solo lo que sea necesario como titulo sinopsis, fecha etc
 BEGIN
 	IF topN IS NULL THEN
 		SELECT 

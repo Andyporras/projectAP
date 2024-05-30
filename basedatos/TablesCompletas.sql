@@ -1,5 +1,3 @@
-create database	IMDB2024;
-use IMDB2024;
 
 CREATE TABLE Country
 (

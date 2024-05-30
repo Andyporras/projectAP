@@ -277,13 +277,13 @@ BEGIN
 	INSERT INTO records(tableName, modification, oldValue, newValue, modificationDate)
     VALUES ("Staff", "INSERT", NULL, NULL, CURDATE());
 END//
-
+delimiter //
 CREATE TRIGGER updateStaff
 AFTER UPDATE ON Staff
 FOR EACH ROW
 BEGIN
 	INSERT INTO records(tableName, modification, oldValue, newValue, modificationDate) 
-    Values("Staff", "UPDATE", CONCAT(OLD.staff_name, ", ", OLD.birthdate, ", ", OLD.biography, ", ", OLD.heigh, ", ", OLD.nationality, ", ", OLD.fact, OLD.photo), CONCAT(NEW.staff_name, ", ", NEW.birthdate, ", ", NEW.biography, ", ", NEW.heigh, ", ", NEW.nationality, ", ", NEW.fact, NEW.photo), CURDATE());
+    Values("Staff", "UPDATE", CONCAT(OLD.staff_name, ", ", OLD.birthdate, ", ", OLD.biography, ", ", OLD.height, ", ", OLD.nationality, ", ", OLD.fact, OLD.photo), CONCAT(NEW.staff_name, ", ", NEW.birthdate, ", ", NEW.biography, ", ", NEW.height, ", ", NEW.nationality, ", ", NEW.fact, NEW.photo), CURDATE());
 END//
 
 CREATE TRIGGER deleteStaff

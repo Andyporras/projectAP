@@ -3,6 +3,24 @@ const router = express.Router();
 const bcryptjs = require('bcryptjs');
 const conexion = require('./conexion'); // Asegúrate de que la ruta es correcta
 
+
+async function verifyPassword(contraGuardad, contraInsertada) {
+    let booleano = 0;
+    try {
+      const coincide = await bcryptjs.compare(contraInsertada, contraGuardad);
+      if (coincide) {
+        console.log('Contraseña correcta');
+        booleano = 1;
+      } else {
+        console.log('Contraseña no coincide');
+        return 0;
+      }
+    } catch (error) {
+      console.error('Error al verificar contraseña:', error);
+    }
+    return booleano;
+  }
+
 //funcion para saber si es un usuario o un administrador
 var idPerson;
 //tabla se llama UserIMDB y las columnas son username, pass
@@ -11,8 +29,7 @@ router.post('/auth', async (req, res) => {
     const password = req.body.password;
     if(usuario && password){
         //mostrar en consola los datos
-        console.log(usuario);
-        console.log(password);
+
         conexion.query('SELECT * FROM UserIMDB WHERE username = ?', [usuario], async (error, results) => {
             //mostrar en consola los resultados
             console.log("tamaño de resultados: " + results.length);
@@ -23,7 +40,7 @@ router.post('/auth', async (req, res) => {
             console.log(results.length === 0);
             */
             // console.log(results.length == 0 || (await bcryptjs.compare(password, results[0].pass)) )
-            if(results.length === 0 || !(password == results[0].pass) ){
+            if(results.length === 0 || !(await verifyPassword(results[0].pass, password)) ){
                 // console.log('Usuario o contraseña incorrectos');
                 //mensaje de error en la vista
                 res.render('login', {

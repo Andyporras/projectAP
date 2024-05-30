@@ -18,4 +18,13 @@ router.get('/estadisticas', (req, res) => {
     }
 });
 
+router.get('/bitacora', (req, res) => {
+    conexion.query('SELECT * FROM records', (error, results) => {
+    if (error) {
+      console.error('Error en la consulta: ', error);
+      return res.status(500).json({ error: 'Error en la consulta' });
+    }
+    res.render('estadisticas', {datosBi: results});
+  });
+});
 module.exports = router;

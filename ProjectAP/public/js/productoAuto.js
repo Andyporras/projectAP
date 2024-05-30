@@ -636,8 +636,62 @@ function cargaInfoProductoAdmin(){
     }
 
 }
-function cargaCategorias(){
+
+var actRating = 1;
+
+function estrella(valor){
+    actRating = valor;
+    console.log("estrella " + valor)
+}
+
+function agregaComentario(){
+
+        var div = document.createElement("div")
+        var div2 = document.createElement("div")
+        var div3 = document.createElement("div")
+        var label  = document.createElement("label");
+        var div4 = document.createElement("div")
+
+        const today = new Date();
+        const yyyy = today.getFullYear();
+        let mm = today.getMonth() + 1; // Months start at 0!
+        let dd = today.getDate();
+
+        if (dd < 10) dd = '0' + dd;
+        if (mm < 10) mm = '0' + mm;
+
+        const formattedToday = dd + '/' + mm + '/' + yyyy;
+
+        div.classList = "cont contComentarios"
+        div2.classList = "textos titulo usr"
+        div2.textContent = "usuarioActual" + " - " + formattedToday
+
+        div.appendChild(div2)
+        label.classList = "textos"
+        label.textContent = document.getElementById("comentario").value
+        var comentario = document.getElementById("comentario").value
+        var fecha = formattedToday;
+        var usuario = "usuarioActual" 
+        var r = actRating;
+        var nuevoComentario = {comentario:comentario, annio: fecha, usuario: usuario, rating: r}
+        producto["comentarios"].push(nuevoComentario);
+        div3.appendChild(label)
+        
+        for(var j = 0; j<5; j++ ){
+            var span = document.createElement("span")
+            if(j<actRating){
+                span.classList = "fa fa-star checked"
+            }else{
+                span.classList = "fa fa-star unchecked"
+            }
+            div4.appendChild(span)
+        }
+
+        div3.appendChild(div4)
+        div.appendChild(div3)
+        
+        document.getElementById("comentarios").appendChild(div)
     
 
-    var label
+
 }

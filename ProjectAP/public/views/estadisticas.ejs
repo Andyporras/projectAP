@@ -109,35 +109,25 @@
     </div>
         <div class="cont contenedor">
             <div class = "titulo textos">Bitácora</div>
-            <table class="table tabla">
-                <thead class = "table-light">
-                  <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Col1</th>
-                    <th scope="col">Col2</th>
-                    <th scope="col">Col3</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th scope="row">Fila1</th>
-                    <td>1-1</td>
-                    <td>1-2</td>
-                    <td>1-3</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">Fila2</th>
-                    <td>2-1</td>
-                    <td>2-2</td>
-                    <td>2-3</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">Fila3</th>
-                    <td>3-1</td>
-                    <td>3-2</td>
-                    <td>3-3</td>
-                  </tr>
-                </tbody>
+              <table class="table table-bordered">
+                  <thead class="titulos">
+                      <tr>
+                          <% if (datosBi.length > 0) { %>
+                              <% for(const key in datosBi[0]) { %>
+                                  <th><%= key %></th>
+                              <% } %>
+                          <% } %>
+                      </tr>
+                  </thead>
+                  <tbody class="titulos">
+                      <% datosBi.forEach(record => { %>
+                          <tr>
+                              <% for(const key in record) { %>
+                                  <td><%= record[key] %></td>
+                              <% } %>
+                          </tr>
+                      <% }) %>
+                  </tbody>
               </table>
 
                <div>

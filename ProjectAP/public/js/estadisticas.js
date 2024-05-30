@@ -1,6 +1,12 @@
 
+
+
 function cargaGraficos(){
+
+    console.log("SI ENTRO");
+
     
+
     var pie = new ej.charts.AccumulationChart({
         //Initializing Series
         series: [

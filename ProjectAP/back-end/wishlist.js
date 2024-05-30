@@ -33,14 +33,14 @@ router.get('/wishlist', (req, res) => {
             res.json(productos);
 
             // Si quieres renderizar una vista, utiliza estas líneas
-            res.render('wislist', {
+            res.render('wishlist', {
                 login: true,
                 name: req.session.name,
                 productos: productos
             });
         });
     } else {
-        res.render('wislist', {
+        res.render('wishlist', {
             login: false,
             name: 'Sesión no iniciada',
         });

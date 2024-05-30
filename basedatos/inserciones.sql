@@ -7,11 +7,12 @@ SELECT * FROM UserIMDB;
 select *from gender;
 select *from person;
 select *from userIMDB;
+call addAdministrator(6);
 SELECT idPerson FROM UserIMDB WHERE username = 'andycr';
 SELECT * FROM Administrator WHERE idUser = 3;
 SELECT * FROM administrator WHERE idPerson = last_insert_id();
 select *from distrit;
-select *from creativo;
+select *from staff;
 
 SELECT * FROM UserIMDB WHERE username =andycr;
 
@@ -79,6 +80,7 @@ CREATE PROCEDURE addUser (IN nameV VARCHAR(255), IN passVar VARCHAR(255))
 CALL addUser('user2', '1234');
 
 
+
 -- ####################################### creativo ########################################
 -- 	añade staff nombre, nacimiento, nacionalidad, biorgafia, altura, dato, foto, lugar ne nacimiento
 CREATE PROCEDURE addStaff(IN nameV VARCHAR(255), birthV DATE, IN natV VARCHAR(225),
@@ -141,7 +143,6 @@ CREATE PROCEDURE addProduct (IN titleV varchar(255), IN linkV varchar(255), IN r
    END//
 
 CALL addProduct('titani', 'link1', '1999-01-01', '1:30:10', 'foto1', 'sinopsis1', 'trailer1', 1000.0, 1);
-
-
+select *from user;
 
 

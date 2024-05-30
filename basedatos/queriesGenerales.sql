@@ -449,11 +449,17 @@ insert into staffType(staffT_name) values("prueba");
 select *from staffType;
 select *from staff;
 select *from relative;
+select *from productav;
+select *from ProductxStaffxType;
+DELETE FROM ProductxStaffxType;
+DELETE FROM staff;
+
 SELECT idRelative FROM Relative WHERE relative_name = 'andrey';
 SELECT * FROM RelativexStaff WHERE idStaff = 2 AND idRelative = 2;
 SELECT idRelative FROM Relative WHERE relative_name ="andrey";
 SELECT idStaff FROM Staff WHERE staff_name = "andy";
 SELECT * FROM StaffType WHERE staffT_name = 'actor';
+SELECT id FROM productav WHERE title = 'peliculas';
 CALL addRelativexStaff(2,2,'tio');
 CREATE PROCEDURE updateStaffTypeName (IN idVar INT, IN nameV VARCHAR(255))
    BEGIN

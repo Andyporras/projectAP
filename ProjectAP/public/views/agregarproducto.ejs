@@ -64,20 +64,20 @@
         <form action="#">
             <div class="form-group">
                 <label for="titulo" class = "textos">Titulo:</label>
-                <input type="text" id="titulo" name="titulo" placeholder="Titulo">
+                <input type="text" id="titulo" name="titulo" placeholder="Titulo" required>
             </div>
             <div class="form-group">
                 <label for="sinopsis" class = "textos">Sinopsis</label>
-                <input type="text" id="sinopsis" name="sinopsis" placeholder="Sinopsis">
+                <input type="text" id="sinopsis" name="sinopsis" placeholder="Sinopsis" required>
             </div>
             <div class="form-group">
                 <label for="duracion" class = "textos">Duración</label>
-                <input type="text" id="duracion" name="duracion" placeholder="Duracion">
+                <input type="text" id="duracion" name="duracion" placeholder="Duracion" required>
             </div>
             <div class="form-group">
                 <label for="categorias" class = "textos">Categorias</label>
                 <!-- debe dejar agregar otras categorias ademas de las ya agregadas -->
-                <select id="categorias" name="categorias">
+                <select id="categorias" name="categorias" required>
                     <option value="">Selecciona una categoria</option>
                     <option value="accion">Acción</option>
                     <option value="comedia">Comedia</option>
@@ -111,28 +111,10 @@
                 </select>
                 <!-- <input type="text" id="apellido" name="apellido" placeholder="Segundo Apellido"> -->
             </div>
-            <label for="direccion" class = "textos">Direccion</label>
-            <div class="Direccion">
-                <label for="nombre" class = "textos">Nombre</label>
-                <label for="rol" class = "textos">Rol</label>
-                <!-- <input type="text" id="direccion" name="direccion" placeholder="Cédula"> -->
-            </div>
-            <div class="Direccion">
-                <input type="text" id="nombre" name="nombre" placeholder="">
-                <input type="text" id="rol" name="rol" placeholder="">
-            </div>
             <div class="form-group">
-                <label for="reparto" class = "textos">Reparto</label>
-                <!-- rellenar con los actores y actrices y permitir agregar mas actores -->
-                <select id="reparto" name="reparto"  >
-                
-                </select>
-                <input type="file" id="reparto" name="reparto" class = "textos">
-            </div>
-            <div class="form-group">
-                <label for="escenas" class = "textos">Poster</label>
+                <label for="Poster" class = "textos">Poster</label>
                 <!-- el usuario selecciona el archivo -->
-                <input type="file" id="escenas" name="escenas" class = "textos">
+                <input type="file" id="Poster" name="Poster" class = "textos">
 
             </div>
             <div class="form-group">
@@ -203,7 +185,7 @@
                     <option value="documental">Documental</option>
                 </select>
             </div>
-            <!-- se pide la cantidad de temporas si es una serie -->
+            <!-- boton de volver y guardar -->
             @if($tipo == "serie")
             <div class="form-group">
                 <label for="temporadas" class = "textos">Temporadas</label>
@@ -223,9 +205,46 @@
                 <button type="submit" class="boton">Guardar</button>
             </div>
         </form>
-    </div>
+        <form action="agregarStaff" method="post">
+            <label for="Trabajos" class = "textos">Creativo:</label>
+            <button href="agregarStaff" class = "boton">Agregar</button>
+            <div class="Direccion">
+                <label for="Creativo" class = "textos">Nombre</label>
+                <label for="rol" class = "textos">Rol</label>
+                <!-- <input type="text" id="direccion" name="direccion" placeholder="Cédula"> -->
+            </div>
+            <div class="Direccion">
+            <!-- se saca los productos de la base de datos -->
+                <select id="creativo" name="creativo">
+                    <!-- se valida que productos este definido -->
+                    <% if (typeof staff != "undefined")  { %>
+                        <!-- se recorre el arreglo de productos -->
+                        <% staff.forEach(creativo => { %>
+                            <option value="<%= creativo.ifStaff %>"><%= creativo.staff_name %></option>
+                        <% }) %>
+                    <% } %>
+                
+                </select>
+                <input type="text" id="rol" name="rol" placeholder="Rol" required>
+            </div>
+        </form>
     
-
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    
+        <% if (typeof alert != "undefined")  { %>
+         <script>
+         Swal.fire({
+           title:'<%= alertTitle %>',
+           text:'<%= alertMessage %>',
+           icon:'<%= alertIcon %>',
+           showConfirmButton: <%= showConfirmButton %>,
+           timer: <%= timer %>
+         }).then(()=>{
+           window.location='/<%= ruta %>'
+         })
+         </script>
+       <% } %>
+    </div>
     <div class = "BarraFondo">
        
             

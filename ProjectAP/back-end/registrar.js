@@ -63,6 +63,7 @@ router.post('/registrar', async (req, res) => {
        console.log("entro");
         //comprobar que las contraseñas sean iguales
         if (contraseña === confirmar_constraseña) {
+            var error = false;
             //encriptar la contraseña
             let passHash = await bcryptjs.hash(contraseña, 8);
             //insertar los datos en la base de datos
@@ -78,6 +79,7 @@ router.post('/registrar', async (req, res) => {
             conexion.query('CALL addPerson(?,?,?,?,?,?,?,?,?)', [nombre, fecha_nacimiento, idGenero, correo, telefono, nationality, foto, cedula, 1], async (error, results) => {
                 if (error) {
                     console.log(error);
+                    error = true;
                 }
                 console.log(results);
             });
@@ -91,20 +93,32 @@ router.post('/registrar', async (req, res) => {
             conexion.query('CALL addUser(?,?)', [usuario, passHash], async (error, results) => {
                 if (error) {
                     console.log(error);
+                    error = true;
                 }
                 console.log(results);
             });
             console.log("entro2");
-            res.render('registrar', {
-                alert: true,
-                alertTitle: 'Registration',
-                alertMessage: '¡Successful Registration!',
-                alertIcon: 'success',
-                showConfirmButton: false,
-                timer: 1500,
-                ruta: ''
-            });
-            
+            if (error) {
+                res.render('registrar', {
+                    alert: true,
+                    alertTitle: 'Error',
+                    alertMessage: '¡Error en el registro!',
+                    alertIcon: 'error',
+                    showConfirmButton: true,
+                    timer: false,
+                    ruta: 'registrar'
+                });
+            } else {
+                res.render('registrar', {
+                    alert: true,
+                    alertTitle: 'Registration',
+                    alertMessage: '¡Successful Registration!',
+                    alertIcon: 'success',
+                    showConfirmButton: false,
+                    timer: 1500,
+                    ruta: ''
+                });
+            }
         } else {
             res.render('registrar', {
                 alert: true,

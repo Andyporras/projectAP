@@ -51,10 +51,10 @@ app.use('/', peliculasNoRegRoutes);
 
 const productoNoRegRoutes = require('./back-end/productoNoReg');
 app.use('/', productoNoRegRoutes);
-/*
+
 const agregarCreativoRoutes = require('./back-end/agregarCreativo');
 app.use('/', agregarCreativoRoutes);
-*/
+
 const agregarProductoRoutes = require('./back-end/agregarProducto');
 app.use('/', agregarProductoRoutes);
 
